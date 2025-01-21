@@ -1,14 +1,13 @@
 # Import required libraries
-import random  # Import random module for shuffling
 import os
 import requests
 import json
 from datetime import datetime
-from bs4 import BeautifulSoup  # For scraping full content
+from bs4 import BeautifulSoup
 
-# Function to fetch news from CryptoPanic with metadata and optional filters
+# Function to fetch news from CryptoPanic API
 def fetch_news(api_key, filter_type=None):
-    url = f"https://cryptopanic.com/api/v1/posts/?auth_token={api_key}&metadata=true"
+    url = f"https://cryptopanic.com/api/v1/posts/?auth_token={api_key}&metadata=true&approved=true"
     if filter_type:
         url += f"&filter={filter_type}"
     response = requests.get(url)
@@ -16,15 +15,14 @@ def fetch_news(api_key, filter_type=None):
         news_data = response.json()
         news_list = []
         for news in news_data.get("results", []):
-            click_url = f"https://cryptopanic.com/news/click/{news['id']}/"
-            full_content = fetch_news_content(click_url, api_key)  # Fetch and translate full content
+            source_url = news.get("source", {}).get("url", "")  # Get the original source URL
+            full_content = fetch_news_content(source_url) if source_url else "Source content unavailable"
             news_list.append({
                 "title": news["title"],
-                "url": click_url,
+                "url": source_url,
                 "description": news.get("description", ""),
                 "image": news.get("metadata", {}).get("image", ""),
-                "panic_score": news.get("panic_score"),
-                "full_content": full_content,  # Add full translated content
+                "full_content": full_content,  # Add the fetched full content
                 "timestamp": datetime.now().isoformat()
             })
         return news_list
@@ -32,62 +30,25 @@ def fetch_news(api_key, filter_type=None):
         print(f"Failed to fetch news: {response.status_code}")
         return []
 
-# Function to fetch and translate the full content of a news article
-def fetch_news_content(url, api_key):
+# Function to fetch and parse the full content of a news article
+def fetch_news_content(url):
+    if not url:
+        return "No source URL provided."
     try:
-        response = requests.get(url)
+        response = requests.get(url, timeout=10)
         if response.status_code == 200:
             soup = BeautifulSoup(response.content, 'html.parser')
-            # Extract meaningful content (you may need to adjust this based on site structure)
+            # Extract meaningful content - Adjust based on the website's structure
             content = " ".join(p.get_text() for p in soup.find_all('p'))
-            return translate_text_easypeasy(api_key, content)
+            return content
         else:
-            print(f"Failed to fetch news content: {response.status_code}")
-            return "Failed to fetch content."
-    except Exception as e:
-        print(f"Error fetching news content: {e}")
+            print(f"Failed to fetch news content from URL: {url}, Status Code: {response.status_code}")
+            return f"Failed to fetch content: {response.status_code}"
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching news content from URL: {url}, Error: {e}")
         return "Error fetching content."
 
-# Function to translate text using Easy Peasy API
-def translate_text_easypeasy(api_key, text):
-    if not text:
-        return ""
-    url = "https://bots.easy-peasy.ai/bot/e56f7685-30ed-4361-b6c1-8e17495b7faa/api"
-    headers = {
-        "content-type": "application/json",
-        "x-api-key": api_key
-    }
-    payload = {
-        "message": f"translate this text '{text}' into Malay language. Your job is just to translate this text into Malay.",
-        "history": [],
-        "stream": False
-    }
-    response = requests.post(url, json=payload, headers=headers)
-    if response.status_code == 200:
-        response_data = response.json()
-        return response_data.get("bot", {}).get("text", "Translation failed")
-    else:
-        print(f"Translation API error: {response.status_code}, {response.text}")
-        return "Translation failed"
-
-# Function to load existing data
-def load_existing_data(filename="translated_news.json"):
-    if os.path.exists(filename):
-        with open(filename, "r", encoding="utf-8") as f:
-            return json.load(f)
-    return {"all_news": []}
-
-# Function to remove duplicates
-def remove_duplicates(news_list):
-    seen_urls = set()
-    unique_news = []
-    for news in news_list:
-        if news["url"] not in seen_urls:
-            unique_news.append(news)
-            seen_urls.add(news["url"])
-    return unique_news
-
-# Function to save news to JSON
+# Function to save news data to JSON
 def save_to_json(data, filename="translated_news.json"):
     output = {"timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "all_news": data}
     with open(filename, "w", encoding="utf-8") as f:
@@ -97,10 +58,9 @@ def save_to_json(data, filename="translated_news.json"):
 # Main function
 def main():
     CRYPTOPANIC_API_KEY = os.getenv("CRYPTOPANIC_API_KEY")
-    EASY_PEASY_API_KEY = os.getenv("EASY_PEASY_API_KEY")
 
-    if not CRYPTOPANIC_API_KEY or not EASY_PEASY_API_KEY:
-        print("API keys are missing! Please set them as environment variables.")
+    if not CRYPTOPANIC_API_KEY:
+        print("API key is missing! Please set it as an environment variable.")
         return
 
     # Fetch all news and hot news
@@ -110,37 +70,16 @@ def main():
     print("Fetching hot news from CryptoPanic...")
     hot_news = fetch_news(CRYPTOPANIC_API_KEY, filter_type="hot")
 
-    # Translate all news
-    print("Translating all news titles and descriptions...")
-    for news in all_news:
-        news["title"] = translate_text_easypeasy(EASY_PEASY_API_KEY, news["title"])
-        news["description"] = translate_text_easypeasy(EASY_PEASY_API_KEY, news["description"])
-        news["is_hot"] = False  # Default value
+    # Combine all news and hot news
+    combined_news = hot_news + all_news
 
-    # Translate hot news and mark them
-    print("Translating hot news titles and descriptions...")
-    for news in hot_news:
-        news["title"] = translate_text_easypeasy(EASY_PEASY_API_KEY, news["title"])
-        news["description"] = translate_text_easypeasy(EASY_PEASY_API_KEY, news["description"])
-        news["is_hot"] = True
-
-    # Combine all news and hot news, ensuring hot news is part of all news
-    combined_news = hot_news + all_news  # Hot news first
-    combined_news = remove_duplicates(combined_news)
-
-    # Load existing data and merge
-    existing_data = load_existing_data()
-    final_news_list = remove_duplicates(combined_news + existing_data.get("all_news", []))
-
-    # Save combined data to JSON
-    save_to_json(final_news_list)
+    # Save the combined news data
+    save_to_json(combined_news)
 
     # Print newly added news
-    print("\nNewly Added News:")
-    new_news = [news for news in final_news_list if news not in existing_data.get("all_news", [])]
-    for news in new_news:
-        print(f"Title: {news['title']}\nURL: {news['url']}\nIs Hot: {news['is_hot']}\n")
+    print("\nFetched News:")
+    for news in combined_news:
+        print(f"Title: {news['title']}\nURL: {news['url']}\nContent: {news['full_content'][:100]}...\n")
 
-# Run the main script
 if __name__ == "__main__":
     main()
