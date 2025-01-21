@@ -18,7 +18,7 @@
             padding: 20px;
             border-radius: 10px;
         }
-        .back-button {
+        .back-button, .original-link {
             display: block;
             margin-top: 20px;
             padding: 10px 20px;
@@ -29,7 +29,7 @@
             border-radius: 5px;
             font-weight: bold;
         }
-        .back-button:hover {
+        .back-button:hover, .original-link:hover {
             background-color: #00c08a;
         }
     </style>
@@ -39,14 +39,13 @@
         <!-- Full content will be dynamically added here -->
     </div>
     <script>
-        // Function to get query parameter value
         const getQueryParam = (param) => {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(param);
         };
 
-        // Fetch full content based on the ID
         const newsId = getQueryParam('id');
+        const newsUrl = getQueryParam('url');
 
         if (newsId !== null) {
             fetch('https://aaqil456.github.io/test-news/translated_news.json')
@@ -65,6 +64,7 @@
                             <img src="${news.image}" alt="${news.title}" style="width: 100%; border-radius: 15px; margin: 20px 0;">
                             <p>${news.full_content}</p>
                             <a href="index.html" class="back-button">Kembali</a>
+                            <a href="${decodeURIComponent(newsUrl)}" target="_blank" class="original-link">Baca Artikel Asal</a>
                         `;
                     } else {
                         document.getElementById('news-container').innerHTML = '<p>News not found.</p>';
