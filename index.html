@@ -59,70 +59,16 @@
             display: inline-block;
             margin-top: 10px;
         }
-        .toggle-bar {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-            position: sticky;
-            top: 0;
-            background-color: black;
-            z-index: 1000;
-            padding: 10px 0;
-        }
-        .toggle-bar .toggle {
-            display: flex;
-            align-items: center;
-            background-color: #333;
-            border-radius: 20px;
-            padding: 5px;
-            cursor: pointer;
-            width: 200px;
-            position: relative;
-        }
-        .toggle-bar .toggle .toggle-slider {
-            position: absolute;
-            height: 100%;
-            width: 50%;
-            background-color: #00e2b1;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: black;
-            font-size: 14px;
-            font-weight: bold;
-        }
-        .toggle-bar .toggle.active .toggle-slider {
-            transform: translateX(100%);
-        }
-        .toggle-bar .toggle span {
-            flex: 1;
-            text-align: center;
-            color: white;
-            font-size: 14px;
-        }
     </style>
 </head>
 <body>
-    <div class="toggle-bar">
-        <div class="toggle" id="toggle">
-            <div class="toggle-slider" id="toggle-slider">Berita</div>
-            <span>Berita</span>
-            <span>Panas</span>
-        </div>
-    </div>
     <div class="news-container" id="news-container">
         <!-- News will be dynamically added here -->
     </div>
     <script>
-        let currentFilter = "all";
-
-        const toggleElement = document.getElementById("toggle");
-        const toggleSlider = document.getElementById("toggle-slider");
-
-        const fetchNews = (filter) => {
-            fetch(`https://aaqil456.github.io/test-news/translated_news.json?timestamp=${new Date().getTime()}`)
+        // Fetch news from JSON file and display
+        const fetchNews = () => {
+            fetch('https://aaqil456.github.io/test-news/translated_news.json')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -133,13 +79,7 @@
                     const container = document.getElementById('news-container');
                     container.innerHTML = ''; // Clear old content
 
-                    const newsArray = data.all_news.filter(news => {
-                        if (filter === "hot") {
-                            return news.is_hot;
-                        } else {
-                            return !news.is_hot;
-                        }
-                    });
+                    const newsArray = data.all_news;
 
                     if (Array.isArray(newsArray)) {
                         newsArray.forEach(news => {
@@ -149,7 +89,7 @@
                                 <div class="news-title">${news.title}</div>
                                 <img src="${news.image}" alt="${news.title}" class="news-image">
                                 <div class="news-description">${news.description}</div>
-                                <a href="news.html?content=${encodeURIComponent(news.full_content)}" class="news-link">Baca Lagi</a>
+                                <a href="news.html?title=${encodeURIComponent(news.title)}&content=${encodeURIComponent(news.full_content)}" class="news-link">Baca Lagi</a>
                                 ${news.is_hot ? '<div class="hot-badge"><span>🔥</span></div>' : ''}
                             `;
                             container.appendChild(newsItem);
@@ -164,20 +104,8 @@
                 });
         };
 
-        toggleElement.addEventListener("click", () => {
-            toggleElement.classList.toggle("active");
-            if (toggleElement.classList.contains("active")) {
-                currentFilter = "hot";
-                toggleSlider.textContent = "Panas";
-            } else {
-                currentFilter = "all";
-                toggleSlider.textContent = "Berita";
-            }
-            fetchNews(currentFilter);
-        });
-
         // Initial fetch for all news
-        fetchNews("all");
+        fetchNews();
     </script>
 </body>
 </html>
