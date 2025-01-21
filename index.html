@@ -122,7 +122,7 @@
         const toggleSlider = document.getElementById("toggle-slider");
 
         const fetchNews = (filter) => {
-            fetch(`https://aaqil456.github.io/translated-news/translated_news.json?timestamp=${new Date().getTime()}`)
+            fetch(`https://aaqil456.github.io/test-news/translated_news.json?timestamp=${new Date().getTime()}`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`HTTP error! Status: ${response.status}`);
