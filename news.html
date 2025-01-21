@@ -44,9 +44,11 @@
             return urlParams.get(param);
         };
 
-        const filterType = getQueryParam('filter');
-        const newsId = parseInt(getQueryParam('id'), 10);
+        const filterType = getQueryParam('filter'); // 'all' or 'hot'
+        const newsId = parseInt(getQueryParam('id'), 10); // Extract numeric ID
         const newsUrl = getQueryParam('url');
+
+        console.log(`Filter Type: ${filterType}, News ID: ${newsId}, News URL: ${newsUrl}`);
 
         if (filterType !== null && !isNaN(newsId)) {
             fetch('https://aaqil456.github.io/test-news/translated_news.json')
@@ -57,10 +59,15 @@
                     return response.json();
                 })
                 .then(data => {
+                    console.log('Fetched data:', data);
+
+                    // Filter news based on the filter type
                     const filteredNews = data.all_news.filter(news => 
                         (filterType === 'hot' && news.is_hot) || 
                         (filterType === 'all' && !news.is_hot)
                     );
+
+                    console.log('Filtered News:', filteredNews);
 
                     const news = filteredNews[newsId];
                     if (news) {
@@ -77,9 +84,11 @@
                     }
                 })
                 .catch(err => {
+                    console.error('Error fetching news:', err);
                     document.getElementById('news-container').innerHTML = '<p>Error loading news. Please try again later.</p>';
                 });
         } else {
+            console.error('Invalid filter type or news ID');
             document.getElementById('news-container').innerHTML = '<p>Invalid news ID or filter type.</p>';
         }
     </script>
