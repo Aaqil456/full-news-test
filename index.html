@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -102,23 +102,6 @@
             color: white;
             font-size: 14px;
         }
-        /* Custom Scrollbar Styles */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #1a1a1a;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #00e2b1;
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #00c08a;
-        }
     </style>
 </head>
 <body>
@@ -166,7 +149,7 @@
                                 <div class="news-title">${news.title}</div>
                                 <img src="${news.image}" alt="${news.title}" class="news-image">
                                 <div class="news-description">${news.description}</div>
-                                <a href="${news.url}" class="news-link" target="_blank">Baca Lagi</a>
+                                <button class="news-link" onclick="showFullContent('${news.full_content}')">Baca Lagi</button>
                                 ${news.is_hot ? '<div class="hot-badge"><span>🔥</span></div>' : ''}
                             `;
                             container.appendChild(newsItem);
@@ -179,6 +162,16 @@
                     const container = document.getElementById('news-container');
                     container.innerHTML = '<div>Error loading news. Please try again later.</div>';
                 });
+        };
+
+        const showFullContent = (content) => {
+            const container = document.getElementById('news-container');
+            container.innerHTML = `
+                <div class="news-item">
+                    <div class="news-description">${content}</div>
+                    <button onclick="fetchNews(currentFilter)">Kembali</button>
+                </div>
+            `;
         };
 
         toggleElement.addEventListener("click", () => {
