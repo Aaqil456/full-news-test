@@ -1,10 +1,9 @@
 # Import required libraries
-import random  # Import random module for shuffling
 import os
 import requests
 import json
 from datetime import datetime
-from bs4 import BeautifulSoup  # For scraping full content
+from bs4 import BeautifulSoup
 
 # Function to fetch news from CryptoPanic with metadata and optional filters
 def fetch_news(api_key, filter_type=None):
@@ -127,17 +126,19 @@ def main():
     hot_news = fetch_news(CRYPTOPANIC_API_KEY, filter_type="hot")
 
     # Translate all news
-    print("Translating all news titles and descriptions...")
+    print("Translating all news titles, descriptions, and full content...")
     for news in all_news:
         news["title"] = translate_text_easypeasy(EASY_PEASY_API_KEY, news["title"])
         news["description"] = translate_text_easypeasy(EASY_PEASY_API_KEY, news["description"])
+        news["full_content"] = translate_text_easypeasy(EASY_PEASY_API_KEY, news["full_content"])
         news["is_hot"] = False  # Default value
 
     # Translate hot news and mark them
-    print("Translating hot news titles and descriptions...")
+    print("Translating hot news titles, descriptions, and full content...")
     for news in hot_news:
         news["title"] = translate_text_easypeasy(EASY_PEASY_API_KEY, news["title"])
         news["description"] = translate_text_easypeasy(EASY_PEASY_API_KEY, news["description"])
+        news["full_content"] = translate_text_easypeasy(EASY_PEASY_API_KEY, news["full_content"])
         news["is_hot"] = True
 
     # Combine all news and hot news, ensuring hot news is part of all news
