@@ -1,56 +1,57 @@
-name: Translation Script and Deployment
+name: Run Translation Script and Deploy to Pages
 
 on:
-  # Uncomment the following line to enable scheduled runs (e.g., hourly)
-  # schedule:
-  #   - cron: "0 * * * *"  # Run every hour
-  workflow_dispatch:  # Allow manual execution of the workflow
+  # Uncomment the following lines to enable the hourly schedule
+  #schedule:
+   #- cron: "0 * * * *"  # Run every hour
+  workflow_dispatch:  # Allows manual execution from the Actions tab
+
+permissions:
+  contents: write
 
 jobs:
-  translate_and_deploy:
-    runs-on: ubuntu-latest
+  run_script:
+    runs-on: ubuntu-22.04
 
     steps:
-      # Step 1: Check out the repository
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      # Step 2: Set up Python environment
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: "3.9"
+          python-version: 3.8
 
-      # Step 3: Install required dependencies
       - name: Install dependencies
         run: |
-          pip install requests beautifulsoup4
+          pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+          pip install transformers requests sentencepiece
 
-      # Step 4: Run the translation script
+      - name: Verify ACTIONS_PAT Secret
+        env:
+          ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
+        run: |
+          if [ -z "${ACTIONS_PAT}" ]; then
+            echo "ACTIONS_PAT is not set!"
+            exit 1
+          fi
+
       - name: Run translation script
         env:
           CRYPTOPANIC_API_KEY: ${{ secrets.CRYPTOPANIC_API_KEY }}
           EASY_PEASY_API_KEY: ${{ secrets.EASY_PEASY_API_KEY }}
         run: python cryptonews_translator.py
 
-      # Step 5: Debug and verify changes
-      - name: Debug Git status
-        run: git status
-
-      # Step 6: Commit and push changes to the repository
       - name: Commit and push changes
         env:
-          ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
+          ACTIONS_PAT: ${{ secrets.ASTIONS_PAT }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          touch translated_news.json  # Force Git to recognize changes
           git add translated_news.json
-          git status  # Debug step to verify added files
-          git commit -m "Update translated news" || echo "No changes to commit"
+          git diff --cached --quiet || git commit -m "Update translated news"
           git push https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/${{ github.repository }}.git main
 
-      # Step 7: Trigger GitHub Pages rebuild
       - name: Trigger GitHub Pages Rebuild
         env:
           ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
