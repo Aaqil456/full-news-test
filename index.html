@@ -149,7 +149,7 @@
                                 <div class="news-title">${news.title}</div>
                                 <img src="${news.image}" alt="${news.title}" class="news-image">
                                 <div class="news-description">${news.description}</div>
-                                <a href="news.html?id=${index}" class="news-link">Baca Lagi</a>
+                                <a href="news.html?id=${index}&url=${encodeURIComponent(news.url)}" class="news-link">Baca Lagi</a>
                                 ${news.is_hot ? '<div class="hot-badge"><span>🔥</span></div>' : ''}
                             `;
                             container.appendChild(newsItem);
