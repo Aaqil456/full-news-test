@@ -39,21 +39,43 @@
         <!-- Full content will be dynamically added here -->
     </div>
     <script>
-        // Retrieve the news title and content from localStorage
-        const title = localStorage.getItem('newsTitle') || 'No title available.';
-        const content = localStorage.getItem('newsContent') || 'No content available.';
+        // Function to get query parameter value
+        const getQueryParam = (param) => {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        };
 
-        // Render the title and content in the container
-        const container = document.getElementById('news-container');
-        container.innerHTML = `
-            <h1>${title}</h1>
-            <p>${content}</p>
-            <a href="index.html" class="back-button">Kembali</a>
-        `;
+        // Fetch full content based on the ID
+        const newsId = getQueryParam('id');
 
-        // Clear localStorage to avoid conflicts
-        localStorage.removeItem('newsTitle');
-        localStorage.removeItem('newsContent');
+        if (newsId !== null) {
+            fetch('https://aaqil456.github.io/test-news/translated_news.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const news = data.all_news[newsId];
+                    if (news) {
+                        const container = document.getElementById('news-container');
+                        container.innerHTML = `
+                            <h1>${news.title}</h1>
+                            <img src="${news.image}" alt="${news.title}" style="width: 100%; border-radius: 15px; margin: 20px 0;">
+                            <p>${news.full_content}</p>
+                            <a href="index.html" class="back-button">Kembali</a>
+                        `;
+                    } else {
+                        document.getElementById('news-container').innerHTML = '<p>News not found.</p>';
+                    }
+                })
+                .catch(err => {
+                    document.getElementById('news-container').innerHTML = '<p>Error loading news. Please try again later.</p>';
+                });
+        } else {
+            document.getElementById('news-container').innerHTML = '<p>Invalid news ID.</p>';
+        }
     </script>
 </body>
 </html>
