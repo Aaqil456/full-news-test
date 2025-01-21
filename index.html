@@ -89,7 +89,7 @@
                                 <div class="news-title">${news.title}</div>
                                 <img src="${news.image}" alt="${news.title}" class="news-image">
                                 <div class="news-description">${news.description}</div>
-                                <a href="news.html?title=${encodeURIComponent(news.title)}&content=${encodeURIComponent(news.full_content)}" class="news-link">Baca Lagi</a>
+                                <a href="news.html" class="news-link" onclick="storeFullContent('${encodeURIComponent(news.title)}', '${encodeURIComponent(news.full_content)}')">Baca Lagi</a>
                                 ${news.is_hot ? '<div class="hot-badge"><span>🔥</span></div>' : ''}
                             `;
                             container.appendChild(newsItem);
@@ -102,6 +102,12 @@
                     const container = document.getElementById('news-container');
                     container.innerHTML = '<div>Error loading news. Please try again later.</div>';
                 });
+        };
+
+        // Store full content in localStorage
+        const storeFullContent = (title, content) => {
+            localStorage.setItem('newsTitle', decodeURIComponent(title));
+            localStorage.setItem('newsContent', decodeURIComponent(content));
         };
 
         // Initial fetch for all news
