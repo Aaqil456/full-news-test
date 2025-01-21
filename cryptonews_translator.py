@@ -4,6 +4,7 @@ import os
 import requests
 import json
 from datetime import datetime
+from bs4 import BeautifulSoup  # For scraping full content
 
 # Function to fetch news from CryptoPanic with metadata and optional filters
 def fetch_news(api_key, filter_type=None):
@@ -16,18 +17,36 @@ def fetch_news(api_key, filter_type=None):
         news_list = []
         for news in news_data.get("results", []):
             click_url = f"https://cryptopanic.com/news/click/{news['id']}/"
+            full_content = fetch_news_content(click_url, api_key)  # Fetch and translate full content
             news_list.append({
                 "title": news["title"],
                 "url": click_url,
                 "description": news.get("description", ""),
                 "image": news.get("metadata", {}).get("image", ""),
                 "panic_score": news.get("panic_score"),
+                "full_content": full_content,  # Add full translated content
                 "timestamp": datetime.now().isoformat()
             })
         return news_list
     else:
         print(f"Failed to fetch news: {response.status_code}")
         return []
+
+# Function to fetch and translate the full content of a news article
+def fetch_news_content(url, api_key):
+    try:
+        response = requests.get(url)
+        if response.status_code == 200:
+            soup = BeautifulSoup(response.content, 'html.parser')
+            # Extract meaningful content (you may need to adjust this based on site structure)
+            content = " ".join(p.get_text() for p in soup.find_all('p'))
+            return translate_text_easypeasy(api_key, content)
+        else:
+            print(f"Failed to fetch news content: {response.status_code}")
+            return "Failed to fetch content."
+    except Exception as e:
+        print(f"Error fetching news content: {e}")
+        return "Error fetching content."
 
 # Function to translate text using Easy Peasy API
 def translate_text_easypeasy(api_key, text):
