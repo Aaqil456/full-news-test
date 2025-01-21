@@ -39,25 +39,21 @@
         <!-- Full content will be dynamically added here -->
     </div>
     <script>
-        // Function to get query parameter value
-        const getQueryParam = (param) => {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        };
+        // Retrieve the news title and content from localStorage
+        const title = localStorage.getItem('newsTitle') || 'No title available.';
+        const content = localStorage.getItem('newsContent') || 'No content available.';
 
-        // Fetch the title and content from query parameters
-        const title = decodeURIComponent(getQueryParam('title')) || 'No title available.';
-        const content = decodeURIComponent(getQueryParam('content')) || 'No content available.';
-
-        // Render the content in the container
+        // Render the title and content in the container
         const container = document.getElementById('news-container');
         container.innerHTML = `
-            <div class="news-item">
-                <h1>${title}</h1>
-                <p>${content}</p>
-                <a href="index.html" class="back-button">Kembali</a>
-            </div>
+            <h1>${title}</h1>
+            <p>${content}</p>
+            <a href="index.html" class="back-button">Kembali</a>
         `;
+
+        // Clear localStorage to avoid conflicts
+        localStorage.removeItem('newsTitle');
+        localStorage.removeItem('newsContent');
     </script>
 </body>
 </html>
