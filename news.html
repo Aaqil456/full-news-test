@@ -44,10 +44,11 @@
             return urlParams.get(param);
         };
 
-        const newsId = getQueryParam('id');
+        const filterType = getQueryParam('filter');
+        const newsId = parseInt(getQueryParam('id'), 10);
         const newsUrl = getQueryParam('url');
 
-        if (newsId !== null) {
+        if (filterType !== null && !isNaN(newsId)) {
             fetch('https://aaqil456.github.io/test-news/translated_news.json')
                 .then(response => {
                     if (!response.ok) {
@@ -56,7 +57,12 @@
                     return response.json();
                 })
                 .then(data => {
-                    const news = data.all_news[newsId];
+                    const filteredNews = data.all_news.filter(news => 
+                        (filterType === 'hot' && news.is_hot) || 
+                        (filterType === 'all' && !news.is_hot)
+                    );
+
+                    const news = filteredNews[newsId];
                     if (news) {
                         const container = document.getElementById('news-container');
                         container.innerHTML = `
@@ -74,7 +80,7 @@
                     document.getElementById('news-container').innerHTML = '<p>Error loading news. Please try again later.</p>';
                 });
         } else {
-            document.getElementById('news-container').innerHTML = '<p>Invalid news ID.</p>';
+            document.getElementById('news-container').innerHTML = '<p>Invalid news ID or filter type.</p>';
         }
     </script>
 </body>
