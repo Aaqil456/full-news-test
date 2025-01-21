@@ -39,17 +39,22 @@
         <!-- Full content will be dynamically added here -->
     </div>
     <script>
+        // Function to get query parameter value
         const getQueryParam = (param) => {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(param);
         };
 
+        // Fetch the title and content from query parameters
+        const title = decodeURIComponent(getQueryParam('title')) || 'No title available.';
         const content = decodeURIComponent(getQueryParam('content')) || 'No content available.';
 
+        // Render the content in the container
         const container = document.getElementById('news-container');
         container.innerHTML = `
             <div class="news-item">
-                <div class="news-description">${content}</div>
+                <h1>${title}</h1>
+                <p>${content}</p>
                 <a href="index.html" class="back-button">Kembali</a>
             </div>
         `;
