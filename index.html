@@ -143,13 +143,14 @@
 
                     if (Array.isArray(newsArray)) {
                         newsArray.forEach((news, index) => {
+                            const uniqueId = `${filter}_${index}`; // Generate unique ID based on filter and index
                             const newsItem = document.createElement('div');
                             newsItem.classList.add('news-item');
                             newsItem.innerHTML = `
                                 <div class="news-title">${news.title}</div>
                                 <img src="${news.image}" alt="${news.title}" class="news-image">
                                 <div class="news-description">${news.description}</div>
-                                <a href="news.html?id=${index}&url=${encodeURIComponent(news.url)}" class="news-link">Baca Lagi</a>
+                                <a href="news.html?id=${uniqueId}&url=${encodeURIComponent(news.url)}" class="news-link">Baca Lagi</a>
                                 ${news.is_hot ? '<div class="hot-badge"><span>🔥</span></div>' : ''}
                             `;
                             container.appendChild(newsItem);
