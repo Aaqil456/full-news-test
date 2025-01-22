@@ -101,7 +101,7 @@ def translate_text_easypeasy(api_key, text):
         "x-api-key": api_key
     }
     payload = {
-        "message": f"rephrase and remove any irrelevant context for this text '{text}' and then translate it into Malay language.",
+        "message": f"translate this text '{text}'into Malay language. only return the translated text",
         "history": [],
         "stream": False
     }
