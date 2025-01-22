@@ -113,7 +113,7 @@ def rephrase_text_easypeasy(api_key, text):
         "x-api-key": api_key
     }
     payload = {
-        "message": f"Rephrase this text: '{text}'. Only return the rephrased text.",
+        "message": f"susun semula ayat-ayat '{text}'ini dalam perenggan dan susunan yang cantik.",
         "history": [],
         "stream": False
     }
