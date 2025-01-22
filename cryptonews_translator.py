@@ -97,7 +97,7 @@ def translate_text_easypeasy(api_key, text):
         "x-api-key": api_key
     }
     payload = {
-        "message": f"translate this text '{text}' into Malay language. Your job is just to translate this text into Malay. if the '{text}' is a long paragraph. make it into several paragraph neatly according to your creativity",
+        "message": f"translate this text '{text}' into Malay language. Your job is just to translate this text into Malay also if there are any repeating sentence that doesn't make sense with the overall text, remove that repeating sentence",
         "history": [],
         "stream": False
     }
