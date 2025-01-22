@@ -18,16 +18,20 @@ def fetch_news(api_key, filter_type=None):
             # Get the original source URL
             source_url = news.get("source", {}).get("url", "")
             # Fetch full content from the source URL
-            full_content = fetch_news_content(source_url) if source_url else "Source content unavailable"
-            news_list.append({
-                "title": news["title"],
-                "url": source_url,
-                "description": news.get("description", ""),
-                "image": news.get("metadata", {}).get("image", ""),
-                "panic_score": news.get("panic_score"),
-                "full_content": full_content,  # Add fetched full content
-                "timestamp": datetime.now().isoformat()
-            })
+            if source_url:
+                full_content = fetch_news_content(source_url)
+                if full_content:  # Only include news with structured content
+                    news_list.append({
+                        "title": news["title"],
+                        "url": source_url,
+                        "description": news.get("description", ""),
+                        "image": news.get("metadata", {}).get("image", ""),
+                        "panic_score": news.get("panic_score"),
+                        "full_content": full_content,  # Add fetched full content
+                        "timestamp": datetime.now().isoformat()
+                    })
+            else:
+                print(f"Skipping news due to missing source URL for title: {news['title']}")
         return news_list
     else:
         print(f"Failed to fetch news: {response.status_code}")
@@ -97,7 +101,7 @@ def translate_text_easypeasy(api_key, text):
         "x-api-key": api_key
     }
     payload = {
-        "message": f"translate this text '{text}' into Malay language. Your job is just to translate this text into Malay also if there are any repeating sentence that doesn't make sense with the overall text, remove that repeating sentence",
+        "message": f"rephrase and remove any irrelevant context for this text '{text}' and then translate it into Malay language.",
         "history": [],
         "stream": False
     }
