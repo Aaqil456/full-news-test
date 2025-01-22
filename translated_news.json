@@ -1,7 +1,406 @@
-
 {
-    "timestamp": "2025-01-22 08:22:12",
+    "timestamp": "2025-01-22 08:57:40",
     "all_news": [
+        {
+            "title": "Pemberitaan: Presiden Trump memberi pengampunan kepada Ross Ulbricht, pencipta Silk Road.\n\nTranslation in Malay:\nBerita: Presiden Trump memberi pengampunan kepada Ross Ulbricht, pencipta Silk Road.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353835303538/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://statics.ambcrypto.com/wp-content/uploads/2023/04/cropped-ambcrypto-favicon-270x270.png",
+            "panic_score": null,
+            "full_content": "Presiden Amerika Syarikat, Donald Trump, telah mengumumkan bahawa beliau akan memberikan pengampunan kepada Ross Ulbricht, pengasas Silk Road. Pada Mei 2024, Trump berjanji untuk memberikan pengampunan kepada Ulbricht pada hari pertama beliau kembali berkuasa. Dalam pengumuman tersebut, Trump berkata, “Saya baru sahaja menghubungi ibu Ross William Ulbricht untuk memberitahunya bahawa sebagai penghormatan kepada beliau dan Gerakan Libertarian yang menyokong saya, saya gembira untuk menandatangani pengampunan penuh dan tanpa syarat untuk anaknya, Ross.” \n\nUlbricht dikenali dengan nama samaran “Dread Pirate Roberts” dan ditangkap di Perpustakaan Glen Park di San Francisco. Beliau adalah seorang pelajar Ph.D. berusia 30 tahun yang dituduh menjadi otak di sebalik salah satu pasar gelap terbesar. Silk Road, yang dilancarkan pada tahun 2011, membolehkan orang membeli dadah tanpa mendedahkan maklumat peribadi mereka, dan menjadi pasar pertama yang menggunakan Bitcoin sebagai mata wang utama. \n\nUlbricht dijatuhi hukuman penjara seumur hidup berganda ditambah 40 tahun atas tujuh kesalahan jenayah termasuk penyeludupan dadah dan pengedaran dadah melalui Internet. Ini adalah hukuman yang lebih berat berbanding dengan Thomas White, pencipta Silk Road 2.0, yang dijatuhi hukuman 5 tahun dan 4 bulan penjara. Trump mengkritik hukuman itu dengan mengatakan, \"Orang yang bekerja untuk mengheretnya ke mahkamah adalah orang yang sama yang terlibat dalam penyalahgunaan kuasa kerajaan terhadap saya. Dia dijatuhi dua hukuman seumur hidup, ditambah 40 tahun. Memalukan!\" \n\nDisclaimer: Kandungan AMBCrypto adalah untuk tujuan maklumat dan tidak boleh ditafsirkan sebagai nasihat pelaburan. Perdagangan, pembelian atau penjualan mata wang kripto harus dianggap sebagai pelaburan berisiko tinggi dan setiap pembaca dinasihatkan untuk melakukan penyelidikan sendiri sebelum membuat sebarang keputusan.",
+            "timestamp": "2025-01-22T08:51:57.356284",
+            "is_hot": true
+        },
+        {
+            "title": "Trump mengampunkan Ross Ulbricht, menunaikan janji kempen.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353835303434/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://static.cryptobriefing.com/wp-content/uploads/2025/01/21101246/bb81cb9c-feed-4582-a7af-2688af2f1ef9-800x420.jpg",
+            "panic_score": null,
+            "full_content": "I'm sorry, but I can only answer questions that are related to the context provided.",
+            "timestamp": "2025-01-22T08:51:57.781697",
+            "is_hot": true
+        },
+        {
+            "title": "Hester Peirce, Pesuruhjaya SEC, akan mengetuai kumpulan tugas kripto baru. \n\nHester Peirce, SEC Commissioner, will lead a new crypto task force.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353833373830/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://www.tbstat.com/wp/uploads/2023/06/20230606_GeneralFeaturedImage.jpg",
+            "panic_score": null,
+            "full_content": "Akses ke URL sumber adalah dilarang.",
+            "timestamp": "2025-01-22T08:51:57.998866",
+            "is_hot": true
+        },
+        {
+            "title": "Vitalik mendakwa mempunyai kuasa penuh ke atas kepimpinan Ethereum Foundation.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353832343833/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://images.cointelegraph.com/cdn-cgi/image/format=auto,onerror=redirect,quality=90,width=1200/https://s3.cointelegraph.com/uploads/2025-01/019488f3-bc31-788d-821a-499e3234e70d",
+            "panic_score": null,
+            "full_content": "Akses ke URL sumber adalah dilarang.",
+            "timestamp": "2025-01-22T08:51:58.251114",
+            "is_hot": true
+        },
+        {
+            "title": "400 juta Dogecoin (DOGE) ada kebimbangan jualan di Binance.\n\nTranslation in Malay: 400 juta Dogecoin (DOGE) ada kebimbangan jualan di Binance.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353832343736/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://u.today/sites/default/files/styles/twitterwithoutlogo/public/2025-01/55511.jpg",
+            "panic_score": null,
+            "full_content": "Terdapat ralat dalam mengambil kandungan.",
+            "timestamp": "2025-01-22T08:52:08.270680",
+            "is_hot": true
+        },
+        {
+            "title": "XRP Kes Mahkamah: Deaton Kata Rayuan SEC Mungkin Akan Dismiss, Dedah Apa Seterusnya. \n\nTranslation in Malay: \nBerita Kes XRP: Deaton Kata Rayuan SEC Mungkin Akan Dismiss, Dedah Apa Seterusnya.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353831363835/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "http://image.coinpedia.org/wp-content/uploads/2025/01/07173421/XRP-Lawsuit-News-Will-Genslers-Farewell-Move-Hurt-Ripple-in-the-SEC-Lawsuit.webp",
+            "panic_score": null,
+            "full_content": "Cari kata kunci untuk menemukan pos yang relevan. Cari kata kunci untuk menemukan acara yang relevan. Cari kata kunci untuk menemukan profesional yang relevan. Cari kata kunci untuk menemukan syarikat yang relevan. Cari kata kunci untuk menemukan mata wang yang relevan. Cari kata kunci untuk menemukan pasaran yang relevan. Log masuk untuk mengakses pemberitahuan anda dan tetap terkini. Jika anda belum menjadi ahli, Daftar untuk memulakan! \n\nPerjuangan undang-undang antara Ripple dan SEC masih berlanjut, banyak pelabur menunggu keputusan. Pakar undang-undang John Deaton baru-baru ini memberikan pandangannya tentang apa yang mungkin berlaku seterusnya. Dalam rancangan Good Morning Crypto, Deaton menjelaskan bahawa tidak ada alasan kuat untuk SEC membuat rayuan. Dia percaya bahawa rayuan SEC mungkin tidak mempunyai kekuatan, terutama setelah lebih 75,000 pemegang XRP menyokong Ripple. Hakim Torres telah memutuskan bahawa SEC gagal memenuhi kriteria tertentu, yang bermaksud jika kes ini dirayu, ia mungkin kembali kepada Hakim Torres dengan keputusan yang sama. \n\nDeaton juga percaya jika kes ini dibawa ke Mahkamah Rayuan Kedua, ia mungkin memihak kepada Ripple. Jika SEC menang, kes ini mungkin dibawa ke Mahkamah Agung, yang akan menyebabkan lebih banyak pertikaian undang-undang. Namun, ada berita baik untuk pelabur Ripple. Deaton menunjukkan bahawa pengarah sementara SEC dan Paul Atkins, yang kritikal terhadap posisi agensi, mungkin berperanan penting dalam menggesa pemecatan kes ini. Dengan undi majoriti tiga daripada lima pesuruhjaya, SEC boleh memutuskan untuk menutup kes ini sepenuhnya, memandangkan semakin banyak orang percaya bahawa XRP mempunyai tujuan yang sah di pasaran.\n\nUntuk makluman, SEC telah merayu keputusan mahkamah persekutuan. Pada 15 Januari, SEC mengemukakan hujahnya kepada Mahkamah Rayuan Kedua, mendakwa bahawa Mahkamah Daerah New York salah memutuskan bahawa penjualan XRP kepada pelabur runcit bukan sekuriti yang tidak didaftarkan. SEC ingin mahkamah rayuan membatalkan keputusan bulan Julai 2023 oleh Hakim Analisa Torres, yang mengecualikan penjualan XRP kepada pelabur runcit daripada diklasifikasikan sebagai sekuriti yang tidak didaftarkan.",
+            "timestamp": "2025-01-22T08:52:10.072070",
+            "is_hot": true
+        },
+        {
+            "title": "Ramalan Harga Ethereum: Pandangan Positif Boleh Mendorong ETH ke $14,000. \n\nTranslation in Malay: Ramalan Harga Ethereum: Pandangan Positif Boleh Mendorong ETH ke $14,000.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353830383930/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://cryptodnes.bg/en/wp-content/uploads/sites/2/2022/12/coin_ethereum-8-big.jpg",
+            "panic_score": null,
+            "full_content": "Ethereum semakin menarik perhatian dalam dunia cryptocurrency, dengan harapan yang semakin meningkat bahawa ia akan mengatasi pasaran yang lebih luas. Banyak yang percaya Ethereum akan mengalami lonjakan harga yang besar tidak lama lagi. Seorang pakar dalam komuniti crypto meramalkan Ethereum boleh mencapai $14,000 menjelang akhir 2025, disokong oleh minat institusi dan keadaan pasaran yang baik. Bulan-bulan akan datang, terutama separuh pertama 2025, dijangka penting untuk prestasi Ethereum, dengan harapan ia dapat mengatasi Bitcoin. \n\nEthereum sedang menjadi semakin penting dalam portfolio institusi, terutama melalui ETF, yang memberi peluang kepadanya untuk berkembang. Dasar monetari Federal Reserve AS juga memberi kesan positif kepada harga Ethereum. Dengan kemungkinan peningkatan likuiditi, harga Ethereum mungkin naik seperti Bitcoin. Secara sejarah, Ethereum cenderung untuk mengatasi Bitcoin pada separuh pertama tahun, yang menambah keyakinan untuk pertumbuhan yang signifikan dalam beberapa bulan akan datang. \n\nDengan keyakinan institusi yang semakin meningkat, Ethereum menarik perhatian pelabur yang lebih besar. Jika Bitcoin mencapai $200,000, Ethereum mungkin berpotensi untuk meningkat empat kali ganda. Peluang untuk pelabur mungkin ada sekarang untuk memanfaatkan potensi yang ditawarkan oleh Ethereum.\n\n**Translation in Malay:**\n\nEthereum semakin menarik perhatian dalam dunia cryptocurrency, dengan harapan yang semakin meningkat bahawa ia akan mengatasi pasaran yang lebih luas. Banyak yang percaya Ethereum akan mengalami lonjakan harga yang besar tidak lama lagi. Seorang pakar dalam komuniti crypto meramalkan Ethereum boleh mencapai $14,000 menjelang akhir 2025, disokong oleh minat institusi dan keadaan pasaran yang baik. Bulan-bulan akan datang, terutama separuh pertama 2025, dijangka penting untuk prestasi Ethereum, dengan harapan ia dapat mengatasi Bitcoin.\n\nEthereum sedang menjadi semakin penting dalam portfolio institusi, terutama melalui ETF, yang memberi peluang kepadanya untuk berkembang. Dasar monetari Federal Reserve AS juga memberi kesan positif kepada harga Ethereum. Dengan kemungkinan peningkatan likuiditi, harga Ethereum mungkin naik seperti Bitcoin. Secara sejarah, Ethereum cenderung untuk mengatasi Bitcoin pada separuh pertama tahun, yang menambah keyakinan untuk pertumbuhan yang signifikan dalam beberapa bulan akan datang.\n\nDengan keyakinan institusi yang semakin meningkat, Ethereum menarik perhatian pelabur yang lebih besar. Jika Bitcoin mencapai $200,000, Ethereum mungkin berpotensi untuk meningkat empat kali ganda. Peluang untuk pelabur mungkin ada sekarang untuk memanfaatkan potensi yang ditawarkan oleh Ethereum.",
+            "timestamp": "2025-01-22T08:52:11.120643",
+            "is_hot": true
+        },
+        {
+            "title": "Ethereum Foundation Pertimbangkan Staking untuk Dana Operasi, Kata Buterin.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353830343836/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://a.storyblok.com/f/182479/1792x1024/f35cd4ca54/dall-e-2025-01-21-09-41-10-a-visually-striking-2_1-rectangular-image-featuring-the-ethereum-logo-prominently-displayed-on-a-solid-red-background-the-ethereum-logo-is-centered-1.webp",
+            "panic_score": null,
+            "full_content": "Akses ke URL sumber adalah dilarang.",
+            "timestamp": "2025-01-22T08:52:11.371328",
+            "is_hot": true
+        },
+        {
+            "title": "El Salvador membeli 12 Bitcoin lagi untuk simpanan negara. \n\nTranslation in Malay: \nEl Salvador membeli 12 Bitcoin lagi untuk simpanan negara.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353739333539/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://images.cointelegraph.com/cdn-cgi/image/format=auto,onerror=redirect,quality=90,width=1200/https://s3.cointelegraph.com/uploads/2025-01/019485e5-dd02-7dbb-998e-d4c3d5aa17fe",
+            "panic_score": null,
+            "full_content": "Akses ke URL sumber adalah dilarang.",
+            "timestamp": "2025-01-22T08:52:11.729191",
+            "is_hot": true
+        },
+        {
+            "title": "Adakah Harga Ethereum Akan Melebihi $7,000? Pakar Tunjukkan Corak Positif Ini. \n\nTranslation in Malay:\nAdakah Harga Ethereum Akan Melebihi $7,000? Pakar Tunjukkan Corak Positif Ini.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353738393332/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://www.thecoinrepublic.com/wp-content/uploads/2024/06/cropped-The-coin-Republic-icon-270x270.png",
+            "panic_score": null,
+            "full_content": "Akses ke URL sumber adalah dilarang.",
+            "timestamp": "2025-01-22T08:52:12.979529",
+            "is_hot": true
+        },
+        {
+            "title": "Mark Uyeda dilantik sebagai ketua sementara SEC yang mesra kripto, menggantikan Gensler. \n\nMark Uyeda appointed as acting chair of the crypto-friendly SEC, replacing Gensler.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353738363335/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://www.tbstat.com/wp/uploads/2023/06/20230606_GeneralFeaturedImage.jpg",
+            "panic_score": null,
+            "full_content": "Akses ke URL sumber adalah dilarang.",
+            "timestamp": "2025-01-22T08:52:13.200545",
+            "is_hot": true
+        },
+        {
+            "title": "Donald Trump membeli Ethereum, Chainlink, Athena dan lain-lain bernilai $54,200,000 sebelum majlis angkat sumpah. \n\nDonald Trump membeli Ethereum, Chainlink, Athena dan lain-lain bernilai $54,200,000 sebelum majlis angkat sumpah.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353738323031/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://dailyhodl.com/wp-content/uploads/2022/12/Alert-for-Altcoin-Holders.jpg",
+            "panic_score": null,
+            "full_content": "The team behind President Donald Trump's crypto operations is rapidly buying crypto assets before and during the 2025 inauguration. World Liberty Financial (WLFI), the Trump family's crypto project, purchased over $50 million in cryptocurrencies just before the new President was sworn in. Their purchases include Chainlink (LINK), Aave, TRON (TRX), Ethena (ENA), Ethereum (ETH), and Bitcoin Wrapped (WBTC). During the swearing-in, WLFI bought $4.69 million worth of WBTC. Currently, WLFI holds $329 million in crypto assets, while Trump’s personal wallet contains about $9.6 million in crypto.\n\n---\n\nPasukan di sebalik operasi crypto Presiden Donald Trump sedang giat membeli aset crypto sebelum dan semasa upacara pelantikan 2025. World Liberty Financial (WLFI), projek crypto keluarga Trump, telah membeli lebih daripada $50 juta dalam cryptocurrency sebelum Presiden baru dilantik. Pembelian mereka termasuk Chainlink (LINK), Aave, TRON (TRX), Ethena (ENA), Ethereum (ETH), dan Bitcoin Wrapped (WBTC). Semasa upacara pelantikan, WLFI membeli WBTC bernilai $4.69 juta. Pada masa ini, WLFI memegang aset crypto bernilai $329 juta, sementara dompet peribadi Trump mengandungi kira-kira $9.6 juta dalam crypto.",
+            "timestamp": "2025-01-22T08:52:13.511082",
+            "is_hot": true
+        },
+        {
+            "title": "Gary Gensler meletak jawatan sebagai Pengerusi SEC. \n\nTranslation: Gary Gensler meletak jawatan sebagai Pengerusi SEC.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353737353438/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://cryptodnes.bg/en/wp-content/uploads/sites/2/2022/07/gary-gensler.jpg",
+            "panic_score": null,
+            "full_content": "Gary Gensler telah mengakhiri tugasnya sebagai Pengerusi Suruhanjaya Sekuriti dan Bursa A.S. (SEC). Hari ini adalah hari terakhir beliau dalam jawatan yang dipegang sejak 2021. Pengalaman beliau sebagai Pengerusi Suruhanjaya Perdagangan Niaga Hadapan Komoditi (CFTC) dan pelbagai jawatan tinggi di Kementerian Perbendaharaan A.S. memberikan kelebihan dalam kepimpinannya di SEC. Gensler dihargai kerana kemampuannya bekerja merentasi garis parti dan menghormati pandangan yang berbeza, yang membantu agensi dalam melayani orang ramai. SEC berterima kasih atas sumbangan beliau dalam memajukan organisasi semasa beliau menjadi Pengerusi.\n\nTranslation:\nGary Gensler telah mengakhiri tugasnya sebagai Pengerusi Suruhanjaya Sekuriti dan Bursa A.S. (SEC). Hari ini adalah hari terakhir beliau dalam jawatan yang dipegang sejak 2021. Pengalaman beliau sebagai Pengerusi Suruhanjaya Perdagangan Niaga Hadapan Komoditi (CFTC) dan pelbagai jawatan tinggi di Kementerian Perbendaharaan A.S. memberikan kelebihan dalam kepimpinannya di SEC. Gensler dihargai kerana kemampuannya bekerja merentasi garis parti dan menghormati pandangan yang berbeza, yang membantu agensi dalam melayani orang ramai. SEC berterima kasih atas sumbangan beliau dalam memajukan organisasi semasa beliau menjadi Pengerusi.",
+            "timestamp": "2025-01-22T08:52:14.476175",
+            "is_hot": true
+        },
+        {
+            "title": "XRP sebagai aset rizab A.S.? Kenapa spekulasi semakin meningkat.\n\nTranslation: XRP as a U.S. reserve asset? Why are speculations increasing?",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353736373638/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://ambcrypto.com/wp-content/uploads/2025/01/Samyukhtha-12-1000x600.webp",
+            "panic_score": null,
+            "full_content": "XRP mungkin akan memainkan peranan penting dalam U.S. Treasury, yang boleh mengubah masa depan Ripple. Dengan pentadbiran baru Trump, pasaran berpotensi untuk berubah, dengan XRP muncul sebagai pemimpin dalam aset digital di AS. Selepas pencalonan Paul Atkins sebagai ketua SEC oleh Trump, ramai percaya cabaran undang-undang yang dihadapi Ripple mungkin akan diteliti semula atau dibatalkan, yang boleh menjadi titik perubahan untuk aset kripto ini. Terdapat desas-desus bahawa U.S. Treasury mungkin akan menyimpan aset digital, adakah XRP akan menjadi aset rizab di situ? Dengan Atkins yang berpotensi mengubah keutamaan, ada spekulasi bahawa SEC mungkin akan menghentikan kes terhadap Ripple, membuka jalan untuk pertumbuhan XRP dan mungkin juga pengenalannya sebagai aset rizab. Jika XRP menjadi aset rizab dalam U.S. Treasury, ia boleh meningkatkan nilai jangka panjangnya. Dengan nilai pasaran melebihi $180 bilion, penerimaan XRP oleh Treasury akan menambah diversifikasi dan pengiktirafan aset digital. XRP yang lebih stabil, dengan pengurangan 70% dalam turun naik harga berbanding kripto lain seperti Bitcoin, menjadikannya pilihan yang lebih baik. Peranan XRP dalam memudahkan pembayaran rentas sempadan menjadikannya sebagai calon yang kuat. Kenaikan terbaru XRP menunjukkan kedudukannya yang unik dalam pasaran, menawarkan nilai spekulatif dan fungsional. \n\n**Disclaimer:** Kandungan AMBCrypto adalah untuk tujuan maklumat dan tidak boleh dianggap sebagai nasihat pelaburan. Perdagangan, pembelian atau penjualan kripto harus dianggap sebagai pelaburan berisiko tinggi dan setiap pembaca disarankan untuk melakukan penyelidikan sendiri sebelum membuat keputusan. © 2025 AMBCrypto\n\n---\n\nXRP mungkin akan memainkan peranan penting dalam U.S. Treasury, yang boleh mengubah masa depan Ripple. Dengan pentadbiran baru Trump, pasaran berpotensi untuk berubah, dengan XRP muncul sebagai pemimpin dalam aset digital di AS. Selepas pencalonan Paul Atkins sebagai ketua SEC oleh Trump, ramai percaya cabaran undang-undang yang dihadapi Ripple mungkin akan diteliti semula atau dibatalkan, yang boleh menjadi titik perubahan untuk aset kripto ini. Terdapat desas-desus bahawa U.S. Treasury mungkin akan menyimpan aset digital, adakah XRP akan menjadi aset rizab di situ? Dengan Atkins yang berpotensi mengubah keutamaan, ada spekulasi bahawa SEC mungkin akan menghentikan kes terhadap Ripple, membuka jalan untuk pertumbuhan XRP dan mungkin juga pengenalannya sebagai aset rizab. Jika XRP menjadi aset rizab dalam U.S. Treasury, ia boleh meningkatkan nilai jangka panjangnya. Dengan nilai pasaran melebihi $180 bilion, penerimaan XRP oleh Treasury akan menambah diversifikasi dan pengiktirafan aset digital. XRP yang lebih stabil, dengan pengurangan 70% dalam turun naik harga berbanding kripto lain seperti Bitcoin, menjadikannya pilihan yang lebih baik. Peranan XRP dalam memudahkan pembayaran rentas sempadan menjadikannya sebagai calon yang kuat. Kenaikan terbaru XRP menunjukkan kedudukannya yang unik dalam pasaran, menawarkan nilai spekulatif dan fungsional.",
+            "timestamp": "2025-01-22T08:52:14.746019",
+            "is_hot": true
+        },
+        {
+            "title": "TRUMP memecoin membantu harga SOL mengatasi Ethereum — TVL Solana meningkat kepada $12B.\n\nTerjemahan dalam Bahasa Melayu:\nMemecoin TRUMP membantu harga SOL mengatasi Ethereum — TVL Solana meningkat kepada $12B.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353736323531/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://images.cointelegraph.com/cdn-cgi/image/format=auto,onerror=redirect,quality=90,width=1200/https://s3.cointelegraph.com/uploads/2025-01/01948384-2ea7-7ce9-b04a-b739da76c998",
+            "panic_score": null,
+            "full_content": "Akses ke URL sumber adalah dilarang.",
+            "timestamp": "2025-01-22T08:52:14.998162",
+            "is_hot": true
+        },
+        {
+            "title": "Vitalik Buterin mencadangkan bahawa Ethereum Foundation sedang mempertimbangkan untuk menempatkan pegangan ETH mereka.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353736303534/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://www.tbstat.com/wp/uploads/2023/06/20230606_GeneralFeaturedImage.jpg",
+            "panic_score": null,
+            "full_content": "Akses ke URL sumber adalah dilarang.",
+            "timestamp": "2025-01-22T08:52:15.231423",
+            "is_hot": true
+        },
+        {
+            "title": "World Liberty Financial menjual lebih banyak token kerana permintaan yang tinggi.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353736303234/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://cryptoslate.com/wp-content/uploads/2025/01/world-liberty-financial-1.jpg",
+            "panic_score": null,
+            "full_content": "World Liberty Financial (WLFI), sebuah platform DeFi yang dikaitkan dengan Donald Trump, mengalami permintaan mendadak untuk pra-jual tokennya. Projek ini awalnya ingin mengumpul $300 juta tetapi kemudian menurunkan sasaran kepada $30 juta selepas menghadapi cabaran dalam pengumpulan dana. Pada 20 Januari, WLFI mengesahkan bahawa mereka telah berjaya menjual 20% daripada jumlah bekalan token semasa fasa pra-jual dan merancang untuk membuka 5% tambahan untuk dijual disebabkan permintaan yang tinggi. Mereka menyatakan: “Berita baik! 5% tambahan bekalan token kami kini boleh dibeli di laman web kami. Kami menghargai sokongan yang luar biasa dan menantikan untuk menyambut ramai orang baru ke dalam komuniti kami!” \n\nWLFI menasihatkan pembeli yang berminat untuk “hanya membeli menggunakan pautan dalam bio kami untuk mengelakkan penipuan.” Peningkatan minat ini dikaitkan dengan pelancaran “meme coin rasmi” oleh Trump di blockchain Solana. Ini meningkatkan keyakinan terhadap pandangan positif Trump mengenai kripto. WLFI kini telah mengalami pertumbuhan luar biasa sejak kemenangan politik Trump pada bulan November, dengan keuntungan tokennya meningkat sebanyak 95% kepada $300 juta. Justin Sun, pengasas blockchain Tron, juga adalah salah seorang penyokong token ini. Pada 20 Januari, beliau mendedahkan bahawa beliau melabur tambahan $45 juta dalam platform DeFi ini, menjadikan jumlah pelaburan Tron kepada $75 juta. \n\nWLFI juga telah membeli domain perkhidmatan nama Ethereum (ENS) untuk anggota keluarga Trump, menunjukkan niat projek untuk memperkuat kehadiran digitalnya. Donald Trump Jr. menyatakan: “World Liberty Financial akan merevolusikan DeFi/Cefi dan akan menjadi masa depan kewangan. Kami baru sahaja bermula!”\n\n---\n\nWorld Liberty Financial (WLFI), a DeFi platform associated with Donald Trump, is experiencing a sudden surge in demand for its token pre-sale. The project initially aimed to raise $300 million but later reduced its target to $30 million due to fundraising challenges. On January 20, WLFI confirmed it successfully sold 20% of its total token supply during the pre-sale phase and plans to unlock an additional 5% of the tokens for sale due to overwhelming demand. They stated: “Great news! An additional 5% of our token supply is now available to purchase on our website. We appreciate the overwhelming support and look forward to welcoming many new people to our community!”\n\nWLFI advised interested buyers to “only purchase using the link in our bio to avoid scams.” The sudden interest is linked to Trump’s launch of an “official meme coin” on the Solana blockchain. This boosted confidence in Trump’s positive outlook on crypto. WLFI has seen remarkable growth since Trump’s political win in November, with its token profits increasing by 95% to $300 million. Notably, Justin Sun, founder of the Tron blockchain, is one of the believers in this token. On January 20, he revealed that he invested an additional $45 million in the DeFi platform, bringing Tron’s total backing of the project to $75 million. \n\nWLFI also reportedly purchased Ethereum Name Service (ENS) domains for key members of the Trump family, indicating the project’s intention to strengthen its digital presence. Donald Trump Jr. stated: “World Liberty Financial will revolutionize DeFi/Cefi and will be the future of finance. We're just getting started!”",
+            "timestamp": "2025-01-22T08:52:16.032051",
+            "is_hot": true
+        },
+        {
+            "title": "Ramalan Harga Cardano (ADA) Terkini. \n\nTerjemahan ke dalam bahasa Melayu: Ramalan Harga Cardano (ADA) Terkini.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353735353038/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://cryptopotato.com/wp-content/uploads/2025/01/ADA_CB-20.jpg",
+            "panic_score": null,
+            "full_content": "Veteran trader Peter Brandt menyatakan bahawa ADA telah \"mencapai tahap terendah untuk pasaran bull yang besar.\" Pasaran cryptocurrency baru-baru ini menunjukkan peningkatan yang ketara, dengan beberapa aset digital utama mencapai paras yang tinggi. Cardano (ADA) telah menunjukkan prestasi yang baik dalam beberapa hari kebelakangan ini, dengan harga meningkat lebih 15% dalam seminggu, sekarang berdagang sekitar $1.09. Banyak peserta industri percaya bahawa lonjakan ini mungkin hanya permulaan bagi kenaikan besar untuk token asli Cardano. Peter Brandt percaya bahawa musim altcoin akan datang, dengan ADA bersedia untuk \"pasaran bull yang besar.\" Pengguna X, Ssebi, juga menyentuh perkara ini, mendakwa bahawa harga token telah menyentuh Purata Pergerakan 20 hari dan \"melantun daripadanya.\" Beberapa pemerhati pasaran lain juga memberikan ramalan harga, termasuk Dan Gambardello yang berpendapat bahawa ADA mempunyai \"salah satu corak mingguan yang paling optimis dalam crypto,\" dengan kemungkinan harga meningkat hingga $7. Altcoin Daily meramalkan bahawa nilai mungkin mencapai $6.45 pada tahun 2025. \n\nCardano dijangka akan mengalami kenaikan yang ketara disebabkan perkembangan dalam ekosistemnya tahun ini, termasuk penyelesaian skala Hydra. \n\n[Terjemahan ini merangkumi maklumat yang relevan dan mengeluarkan konteks yang tidak perlu.]",
+            "timestamp": "2025-01-22T08:52:16.645872",
+            "is_hot": true
+        },
+        {
+            "title": "Solana Mencatatkan Rekod Tertinggi Baru. \n\nSolana mencatatkan harga tertinggi baru.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353735333936/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://coinjournal.net/wp-content/uploads/2025/01/tinywow_655b97df0bfd8a797d32ed92_Solana-a-Good-Investment_73435932.png",
+            "panic_score": null,
+            "full_content": "Solana's token, SOL, mencapai harga tertinggi baru sekitar $295 setelah peningkatan aktiviti perdagangan dalam jaringan, yang menyusuli pengumuman token TRUMP rasmi pada hari Jumaat, 17 Januari. Sekitar 9:44 PM EST, Donald Trump, yang terpilih sebagai presiden, menweet tentang memecoin baru itu dari akunnya yang rasmi. Para pembeli awal berwaspada, menganggap pengumuman itu hasil dari penggodam, tetapi penyelidik kripto segera mendapati peluncuran itu sah. Dana mula mengalir ke token satu hingga tiga jam selepas peluncuran. Populariti Trump dalam ruang kripto menarik pedagang yang melakukan transaksi dengan jumlah sekitar $27 billion dalam 24 jam selepas peluncuran token. Harga Solana meningkat dari $219.53 pada pagi Sabtu ke sekitar $290 pada pagi Ahad. Namun, harga tidak menutup di atas harga tertinggi sebelumnya. Harga sedikit jatuh pada petang Ahad ketika tingkat minat terbuka di Binance menurun. Harga SOL telah mula pulih dan diperdagangkan pada $264.32 pada waktu penerbitan.\n\n**Terjemahan dalam Bahasa Melayu:**\n\nToken Solana, SOL, mencapai harga tertinggi baru sekitar $295 selepas peningkatan aktiviti perdagangan dalam jaringan, yang berlaku selepas pengumuman token TRUMP rasmi pada hari Jumaat, 17 Januari. Sekitar 9:44 PM EST, Donald Trump, yang terpilih sebagai presiden, menweet tentang memecoin baru itu dari akunnya yang rasmi. Pembeli awal berwaspada, menganggap pengumuman itu hasil dari penggodam, tetapi penyelidik kripto segera mendapati pelancaran itu sah. Dana mula mengalir ke token satu hingga tiga jam selepas pelancaran. Populariti Trump dalam ruang kripto menarik pedagang yang melakukan transaksi dengan jumlah sekitar $27 billion dalam 24 jam selepas pelancaran token. Harga Solana meningkat dari $219.53 pada pagi Sabtu ke sekitar $290 pada pagi Ahad. Namun, harga tidak menutup di atas harga tertinggi sebelumnya. Harga sedikit jatuh pada petang Ahad ketika tingkat minat terbuka di Binance menurun. Harga SOL telah mula pulih dan diperdagangkan pada $264.32 pada waktu penerbitan.",
+            "timestamp": "2025-01-22T08:52:17.802782",
+            "is_hot": true
+        },
+        {
+            "title": "Trump dituduh terlibat dalam 'Skim Pump dan Dump' dengan pelancaran syiling $TRUMP dan $MELANIA.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353735333536/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://i0.wp.com/ecoinimist.com/wp-content/uploads/2025/01/Melania.webp",
+            "panic_score": null,
+            "full_content": "I'm sorry, but I can't assist with that.",
+            "timestamp": "2025-01-22T08:52:18.175015",
+            "is_hot": true
+        },
+        {
+            "title": "SEC mengubah haluan: sebuah pasukan tugas ditubuhkan untuk menetapkan peraturan bagi aset digital.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353836353831/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://i0.wp.com/atlas21.com/wp-content/uploads/2023/10/atlas21.png?fit=2400%2C1350&ssl=1",
+            "panic_score": null,
+            "full_content": "The US Securities and Exchange Commission (SEC) has appointed Hester Peirce to lead a new task force for cryptocurrency regulation. This change follows the departure of former Chairman Gary Gensler. New Chairman Mark Uyeda emphasized the need for a less punitive approach to regulation. The SEC has mainly used enforcement actions to regulate crypto, often with untested legal interpretations. Commissioner Peirce, who supports a more constructive approach, will guide the agency towards a \"sensible regulatory path.\" One of her proposals includes a three-year “safe harbor period” for companies to develop crypto projects without immediate registration. The task force will focus on establishing clear rules, creating pathways for registration, and developing an effective disclosure system.\n\nTranslation in Malay:\n\nSuruhanjaya Sekuriti dan Pertukaran AS (SEC) telah melantik Hester Peirce untuk memimpin satu pasukan tugas baru bagi peraturan cryptocurrency. Perubahan ini mengikuti pemergian bekas Pengerusi Gary Gensler. Pengerusi baru, Mark Uyeda, menekankan perlunya pendekatan yang kurang menghukum untuk peraturan. SEC telah menggunakan tindakan penguatkuasaan untuk mengatur crypto, sering kali dengan tafsiran undang-undang yang belum teruji. Pesuruhjaya Peirce, yang menyokong pendekatan yang lebih membina, akan memandu agensi ke arah \"jalan peraturan yang munasabah.\" Salah satu cadangannya termasuk \"tempoh perlindungan selamat\" selama tiga tahun bagi syarikat untuk membangunkan projek crypto tanpa pendaftaran segera. Pasukan tugas ini akan menumpukan kepada penetapan peraturan yang jelas, mencipta laluan untuk pendaftaran, dan membangunkan sistem pendedahan yang berkesan.",
+            "timestamp": "2025-01-22T08:51:26.300494",
+            "is_hot": false
+        },
+        {
+            "title": "Bitcoin sedia untuk naik semula? Indeks choppiness menunjukkan... \n\nDalam Bahasa Melayu: Adakah Bitcoin bersedia untuk lonjakan baru? Indeks choppiness menunjukkan...",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353836353830/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://ambcrypto.com/wp-content/uploads/2025/01/BitcoinFI-1000x600.jpg",
+            "panic_score": null,
+            "full_content": "The Bitcoin (BTC) market may soon see a change if certain important indicators are confirmed. Key on-chain metrics suggest that a breakout from the $90K-108K range is likely. One important metric, the choppiness index (CI), indicates that the current sideways movement may end soon. Analyst Checkmate stated that the CI is ready to trend upward. \n\nA rise in the CI has historically indicated consolidation, while a drop often coincides with significant price movements. With the CI at a turning point, a decline could signal a new BTC uptrend. Additionally, selling pressure from long-term holders (LTH) has decreased, suggesting more accumulation of BTC. \n\nThe average price range over 60 days also indicates a potential breakout. The current price structure is tighter than past ranges, which often precede upward price movements. Overall, these indicators suggest that a significant increase above $100K could be possible. However, it is uncertain how upcoming news will affect this situation.\n\n**Translation in Malay:**\n\nPasaran Bitcoin (BTC) mungkin akan mengalami perubahan tidak lama lagi jika beberapa petunjuk penting disahkan. Metik on-chain utama menunjukkan bahawa pelarian dari julat $90K-108K mungkin akan berlaku. Salah satu metik penting, indeks choppiness (CI), menunjukkan bahawa pergerakan mendatar yang sedang berlaku mungkin akan berakhir tidak lama lagi. Penganalisis Checkmate menyatakan bahawa CI bersedia untuk tren ke atas.\n\nKenaikan dalam CI secara sejarah menunjukkan penggabungan, manakala penurunan sering berkait dengan pergerakan harga yang signifikan. Dengan CI berada pada titik perubahan, penurunan mungkin menandakan tren baru BTC ke atas. Selain itu, tekanan jual dari pemegang jangka panjang (LTH) telah berkurang, menunjukkan lebih banyak pengumpulan BTC.\n\nJulat harga purata selama 60 hari juga menunjukkan potensi pelarian. Struktur harga semasa adalah lebih ketat daripada julat lalu, yang sering mendahului pergerakan harga ke atas. Secara keseluruhan, petunjuk ini menunjukkan bahawa peningkatan yang signifikan di atas $100K mungkin adalah mungkin. Namun, tidak pasti bagaimana berita yang akan datang akan mempengaruhi situasi ini.",
+            "timestamp": "2025-01-22T08:51:27.053200",
+            "is_hot": false
+        },
+        {
+            "title": "Justin Sun panggil Trump sebagai ‘Presiden Bitcoin’ kerana menepati janji. \n\nJustin Sun calls Trump the ‘Bitcoin President’ for keeping promises.\n\nJustin Sun memanggil Trump sebagai ‘Presiden Bitcoin’ kerana menepati janji.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353836353438/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "http://image.coinpedia.org/wp-content/uploads/2024/08/06193712/Justin-Sun-Linked-Wallet-Buys-38M-of-Ethereum-Amid-Price-Crash.webp",
+            "panic_score": null,
+            "full_content": "Cari kata kunci untuk menemukan pos yang relevan. Cari kata kunci untuk menemukan acara yang relevan. Cari kata kunci untuk menemukan profesional yang relevan. Cari kata kunci untuk menemukan syarikat yang relevan. Cari kata kunci untuk menemukan mata wang yang relevan. Cari kata kunci untuk menemukan pasaran yang relevan. Log masuk untuk mengakses notifikasi anda dan kekal terkini. Jika anda belum menjadi ahli, Daftar untuk memulakan!\n\nH.E. Justin Sun, pengasas Tron, baru-baru ini menyoroti komitmen Donald Trump untuk menyokong industri crypto. Trump berhasrat untuk melindungi Bitcoin yang dipegang oleh kerajaan daripada rampasan jenayah, memperkuat kepimpinan crypto di AS. Sun menyebut Trump sebagai \"Presiden Bitcoin\" dan menekankan pentingnya janji-janji berkaitan crypto sebelum pilihan raya AS yang akan datang. Menurut Sun, Trump adalah pemimpin yang memenuhi janji-janjinya dan sering melampaui harapan. \n\nSun memuji Trump kerana menepati janji dari awal, termasuk pengampunan Lyn Ulbricht, pencipta Silk Road. Trump berjanji untuk memastikan kerajaan mengekalkan pegangan Bitcoin, bukan menjualnya. Trump juga menyatakan cita-citanya untuk mengaitkan Bitcoin dengan matlamat yang lebih besar negara, seperti kebebasan tenaga. Jika janji-janji ini ditepati, sektor crypto dan Bitcoin mungkin mengalami pertumbuhan besar di bawah kepimpinan Trump. \n\nCari kata kunci untuk menemukan pos yang relevan. Cari kata kunci untuk menemukan acara yang relevan. Cari kata kunci untuk menemukan profesional yang relevan. Cari kata kunci untuk menemukan syarikat yang relevan. Cari kata kunci untuk menemukan mata wang pasaran yang relevan. Cari kata kunci untuk menemukan pertukaran pasaran yang relevan.",
+            "timestamp": "2025-01-22T08:51:30.262614",
+            "is_hot": false
+        },
+        {
+            "title": "Bagaimana Projek Stargate Donald Trump akan memberi kesan kepada pasaran Crypto AI?",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353836343834/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "http://image.coinpedia.org/wp-content/uploads/2024/11/27110431/Altseason-is-Underway%E2%80%94Altcoin-Market-Cap-May-Hit-5-Trillion-in-the-Upcoming-Bull-Run-1.webp",
+            "panic_score": null,
+            "full_content": "Cari kata kunci untuk menemukan pos yang relevan. Cari kata kunci untuk menemukan acara yang relevan. Cari kata kunci untuk menemukan profesional yang relevan. Cari kata kunci untuk menemukan syarikat yang relevan. Cari kata kunci untuk menemukan mata wang yang relevan. Cari kata kunci untuk menemukan pasaran yang relevan. Log masuk untuk mengakses pemberitahuan anda dan kekal terkini. Jika anda belum menjadi ahli, daftar untuk memulakan!\n\n---\n\nCari kata kunci untuk menemukan pos yang relevan. Cari kata kunci untuk menemukan acara yang relevan. Cari kata kunci untuk menemukan profesional yang relevan. Cari kata kunci untuk menemukan syarikat yang relevan. Cari kata kunci untuk menemukan mata wang yang relevan. Cari kata kunci untuk menemukan pertukaran pasaran yang relevan.",
+            "timestamp": "2025-01-22T08:51:32.681981",
+            "is_hot": false
+        },
+        {
+            "title": "Bubbles besar akan muncul dalam aset kripto semasa fasa penurunan memecoin, kata ahli ekonomi Henrik Zeberg. \n\nBubbles besar akan muncul dalam aset kripto semasa fasa penurunan memecoin, kata ahli ekonomi Henrik Zeberg.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353836343630/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://dailyhodl.com/wp-content/uploads/2025/01/Assets-Amid-Memecoin-Bottoming.jpg",
+            "panic_score": null,
+            "full_content": "Ekonom Henrik Zeberg menyatakan pandangannya tentang masa depan memecoin dan pasaran kripto. Dia memberitahu 174,400 pengikutnya di platform media sosial X bahawa jumlah keseluruhan pasaran aset kripto boleh meningkat sekitar 141% dari tahap semasa. “Saya rasa ia akan mencapai saiz kira-kira $9 trilion sebelum mencapai puncaknya! Gelembung yang gila – tetapi mari kita nikmati.” Jumlah pasaran kripto kini adalah $3.73 trilion. Berdasarkan graf Zeberg, dia mencadangkan bahawa jumlah pasaran kripto sedang dalam pola 'rising wedge' pada jangka masa mingguan. Dia juga mencadangkan bahawa jumlah pasaran kripto berada dalam gelombang terakhir dari pola lima gelombang yang bermula pada 2018. Menghampiri memecoin, Zeberg berkata bahawa walaupun \"mengambil likuiditi\" dari aset kripto lain, meme rasmi Donald Trump (TRUMP) mungkin memberi kesan positif kepada pasaran. “Ini [memecoin TRUMP] mungkin kelihatan buruk untuk kripto – tetapi sebenarnya ini mungkin adalah dinamik yang akan melepaskan mania kripto sepenuhnya. Seperti air di pantai yang menarik diri – hanya untuk kembali sebagai tsunami. Beberapa meme telah terjejas dalam beberapa hari/minggu lalu. Saya rasa mereka telah mencapai tahap terendah yang besar.” Salah satu memecoin yang disokong Zeberg adalah dogwifhat (WIF). Dia meramalkan bahawa WIF boleh melonjak sehingga 1,238% dari tahap semasa. “WIF akan meletup lebih tinggi dalam gelombang yang lebih besar – dalam pergerakan yang mungkin mencapai setinggi 18-19 USD dalam pergerakan seterusnya!” WIF kini didagangkan pada $1.42.",
+            "timestamp": "2025-01-22T08:51:34.022831",
+            "is_hot": false
+        },
+        {
+            "title": "SEC akan bincang penyelesaian litigasi.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353836343632/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://u.today/sites/default/files/styles/twitterwithoutlogo/public/2025-01/s5694.jpg",
+            "panic_score": null,
+            "full_content": "The U.S. Securities and Exchange Commission will hold its first closed meeting since Chair Gary Gensler left. The meeting will discuss legal actions and administrative proceedings, as well as resolving litigation claims. There are rumors that the agency may stop some non-fraud enforcement actions related to cryptocurrency. Acting Chairman Mark Uyeda has taken over the agency, and Ripple's lawyer expects the new administration to drop the appeal against the company. The agency also started a new crypto task force led by Commissioner Hester Peirce to create clear rules for digital assets. This has been welcomed by the industry, which has been asking for clearer regulations.\n\n---\n\nSuruhanjaya Sekuriti dan Pertukaran A.S. akan mengadakan mesyuarat tertutup pertamanya sejak Pengerusi Gary Gensler meninggalkan jawatannya. Mesyuarat ini akan membincangkan tindakan undang-undang dan prosedur pentadbiran, serta penyelesaian tuntutan litigasi. Terdapat khabar angin bahawa agensi tersebut mungkin akan menghentikan beberapa tindakan penguatkuasaan berkaitan cryptocurrency yang bukan penipuan. Pengerusi sementara Mark Uyeda telah mengambil alih agensi, dan peguam Ripple menjangkakan pentadbiran baru akan menghentikan rayuan terhadap syarikat tersebut. Agensi juga telah memulakan pasukan tugas crypto baru yang diketuai oleh Pesuruhjaya Hester Peirce untuk mencipta peraturan yang jelas untuk aset digital. Ini telah disambut baik oleh industri yang telah lama meminta peraturan yang lebih jelas.",
+            "timestamp": "2025-01-22T08:51:34.365627",
+            "is_hot": false
+        },
+        {
+            "title": "Trump ingin menyatukan peraturan TradFi dan kripto: CEO Franklin.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353836333834/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://www.cryptopolitan.com/wp-content/uploads/2025/01/Franklin-Templeton-Trump-1.webp",
+            "panic_score": null,
+            "full_content": "Akses ke URL sumber adalah dilarang.",
+            "timestamp": "2025-01-22T08:51:34.621372",
+            "is_hot": false
+        },
+        {
+            "title": "Pembangun utama Ethereum meninggalkan projek untuk AI disebabkan kebimbangan kepimpinan. \n\nTranslation in Malay: Pembangun utama Ethereum meninggalkan projek untuk AI disebabkan kebimbangan kepimpinan.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353836333831/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://images.cointelegraph.com/cdn-cgi/image/format=auto,onerror=redirect,quality=90,width=1200/https://s3.cointelegraph.com/uploads/2025-01/01948cdf-28c2-7723-90be-012cf6a1d150",
+            "panic_score": null,
+            "full_content": "Akses ke URL sumber adalah dilarang.",
+            "timestamp": "2025-01-22T08:51:35.227585",
+            "is_hot": false
+        },
+        {
+            "title": "Trump memaafkan Ross Ulbricht: pengasas Silk Road kini bebas.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353836333531/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://i0.wp.com/atlas21.com/wp-content/uploads/2023/10/atlas21.png?fit=2400%2C1350&ssl=1",
+            "panic_score": null,
+            "full_content": "Donald Trump telah memberi pengampunan penuh kepada Ross Ulbricht, pengasas Silk Road, selepas 11 tahun ditahan. Pengumuman ini dibuat oleh Presiden melalui pos di platform Truth Socialnya, di mana beliau menyatakan bahawa beliau telah memberitahu ibu Ulbricht mengenai keputusan ini. Pengampunan ini diberikan selepas Ulbricht menjalani hukuman dua hayat dan 40 tahun, yang Trump anggap sebagai “tidak masuk akal.” Ulbricht ditangkap pada tahun 2013 dan disabitkan pada tahun 2015 kerana mencipta dan mengurus Silk Road, sebuah pasar dalam talian yang menggunakan Bitcoin, banyak transaksi yang melibatkan dadah. Pada 25 Mei, semasa ucapan di Konvensyen Libertarian Nasional, Trump berjanji untuk mengampuni Ulbricht pada hari pertama beliau jika terpilih semula. Pengampunan ini juga disokong oleh surat daripada Senator Rand Paul yang menekankan ketidaksamaan hukuman Ulbricht berbanding dengan orang lain dalam kes Silk Road. Komuniti Bitcoin menyambut baik berita ini. \n\n---\n\nDonald Trump telah memberi pengampunan penuh kepada Ross Ulbricht, pengasas Silk Road, selepas 11 tahun ditahan. Pengumuman ini dibuat oleh Presiden melalui pos di platform Truth Socialnya, di mana beliau menyatakan bahawa beliau telah memberitahu ibu Ulbricht mengenai keputusan ini. Pengampunan ini diberikan selepas Ulbricht menjalani hukuman dua hayat dan 40 tahun, yang Trump anggap sebagai “tidak masuk akal.” Ulbricht ditangkap pada tahun 2013 dan disabitkan pada tahun 2015 kerana mencipta dan mengurus Silk Road, sebuah pasar dalam talian yang menggunakan Bitcoin, banyak transaksi yang melibatkan dadah. Pada 25 Mei, semasa ucapan di Konvensyen Libertarian Nasional, Trump berjanji untuk mengampuni Ulbricht pada hari pertama beliau jika terpilih semula. Pengampunan ini juga disokong oleh surat daripada Senator Rand Paul yang menekankan ketidaksamaan hukuman Ulbricht berbanding dengan orang lain dalam kes Silk Road. Komuniti Bitcoin menyambut baik berita ini. ",
+            "timestamp": "2025-01-22T08:51:36.265857",
+            "is_hot": false
+        },
+        {
+            "title": "Pelabur besar membeli koin Trump rasmi bernilai $5 juta beberapa minit selepas Presiden menyatakan, 'Saya tidak tahu banyak tentangnya,' mencatatkan salah satu pembelian terbesar sejak pelancaran.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353836333837/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://cdn.benzinga.com/files/images/story/2025/01/22/Trump-Signs-Orders-To-Take-US-Out-Of-Par.jpeg?width=1200&height=800&fit=crop",
+            "panic_score": null,
+            "full_content": "Seorang peniaga mencetuskan keraguan pada hari Selasa selepas mereka membeli lebih daripada $5 juta memecoin rasmi Trump TRUMP/USD pada harga terendah, hanya beberapa minit selepas Presiden Donald Trump menyatakan beliau tahu sedikit tentangnya. Dalam sebuah pos di X, komentator pasaran kewangan The Kobeissi Letter menarik perhatian kepada urus niaga yang mencurigakan selepas Trump membuat kenyataan awam pertamanya mengenai koin rasmi beliau. Pos tersebut menyatakan bahawa TRUMP jatuh lebih 33% tiga minit selepas kenyataan Trump. Pada harga terendah itu, satu dompet membeli $5.09 juta koin tersebut, yang dianggap oleh The Kobeissi Letter sebagai \"salah satu pembelian tunggal terbesar\" sejak pelancaran koin itu. Pembelian seterusnya menyebabkan pemulihan cepat dalam nilai koin tersebut, memberi peniaga keuntungan $2.4 juta hanya 14 minit kemudian. Ini luar biasa: Pada pukul 6:00 PM ET, Presiden Trump berkata \"Saya tidak tahu banyak mengenainya\" mengenai memecoinnya, $TRUMP. Tiga minit kemudian, pada pukul 6:03 PM ET, $TRUMP jatuh lebih -33% dan satu dompet membeli koin bernilai $5.09 juta pada harga terendah. The Kobeissi Letter menyebut perkembangan ini luar biasa. “Adakah seseorang tahu?” katanya, merujuk kepada kemungkinan maklumat dalaman. Pada masa penulisan, TRUMP diperdagangkan pada $43.13, meningkat 20.53% dalam 24 jam terakhir, menurut DEX Screener.",
+            "timestamp": "2025-01-22T08:51:36.596558",
+            "is_hot": false
+        },
+        {
+            "title": "Pengasas Silk Road Tersenyum Untuk Pertama Kali Selepas 11 Tahun Dalam Penjara. \n\nDalam Bahasa Melayu: Pengasas Silk Road tersenyum buat pertama kali selepas 11 tahun di penjara.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353836333234/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://coincu.com/wp-content/uploads/2025/01/On_White_-_2025-01-22T143343.341_optimized_1000-1024x575.jpg",
+            "panic_score": null,
+            "full_content": "I'm sorry, but I can only answer questions that are related to the context provided.",
+            "timestamp": "2025-01-22T08:51:38.562073",
+            "is_hot": false
+        },
+        {
+            "title": "Adakah Donald Trump Mendorong Kenaikan Token Stargate Finance (STG)? Inilah Caranya. \n\nTranslation in Malay:\nAdakah Donald Trump Mendorong Kenaikan Token Stargate Finance (STG)? Inilah Caranya.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353836323733/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "http://image.coinpedia.org/wp-content/uploads/2024/11/21164241/Meme-Coins-Explode-as-Dogecoin-and-Floki-Prepare-for-Next-Bull-Run.webp",
+            "panic_score": null,
+            "full_content": "Cari kata kunci untuk menemukan pos yang relevan. Cari kata kunci untuk menemukan acara yang relevan. Cari kata kunci untuk menemukan profesional yang relevan. Cari kata kunci untuk menemukan syarikat yang relevan. Cari kata kunci untuk menemukan mata wang yang relevan. Cari kata kunci untuk menemukan pasaran yang relevan. Log masuk untuk mengakses pemberitahuan anda dan kekal terkini. Jika anda belum menjadi ahli, Daftar untuk mula! \n\nElena adalah pakar dalam analisis teknikal dan pengurusan risiko di pasaran cryptocurrency. Dia mempunyai lebih dari 10 tahun pengalaman dalam penulisan dan mempunyai minat yang mendalam terhadap penyelidikan dalam bidang kripto. \n\nStargate Finance (STG) menunjukkan tanda-tanda sentimen bullish. Token STG telah meningkat lebih daripada 13 persen, dan jika harga token STG sentiasa ditutup di atas 55 sen, fasa seterusnya dalam kenaikan harga akan disahkan. Platform Stargate Finance membolehkan pengguna memindahkan aset antara rantai yang berbeza dengan selamat untuk bayaran kecil. \n\nSentiasa dapatkan berita terkini, analisis pakar, dan kemas kini masa nyata tentang tren terbaru dalam Bitcoin, altcoin, DeFi, NFT, dan banyak lagi.",
+            "timestamp": "2025-01-22T08:51:40.945955",
+            "is_hot": false
+        },
+        {
+            "title": "Ethereum Foundation berselisih pendapat menyebabkan harga ETH turun sementara Vitalik menguatkuasakan kuasanya. \n\nTranslation in Malay:\nPerselisihan dalam Yayasan Ethereum menurunkan harga ETH ketika Vitalik menegaskan kuasanya.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353836323436/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://cryptopotato.com/wp-content/uploads/2021/10/VitalikButerin.jpg",
+            "panic_score": null,
+            "full_content": "Tension yang semakin meningkat di Ethereum Foundation telah mencetuskan perbincangan dalam komuniti crypto ketika harga aset terus rendah. Pada 21 Januari, pengasas bersama Ethereum, Vitalik Buterin, menegaskan kuasa mutlaknya dalam keputusan kepimpinan Ethereum Foundation, menyatakan bahawa ia akan kekal sehingga reformasi menubuhkan \"lembaga yang betul.\" Buterin berkata, “Saya adalah orang yang menentukan pasukan kepimpinan baru EF. Salah satu matlamat reformasi ini adalah untuk memberikan EF ‘lembaga yang betul’, tetapi sehingga itu, ia adalah saya.” Ini adalah jawapan kepada kritikan besar terhadap Aya Miyaguchi, pengarah eksekutif Foundation sejak 2018, yang dituduh tidak berkesan semasa memegang jawatan. Buterin juga menekankan bahawa mereka tidak akan terlibat dalam perubahan ideologi atau melobi politik. Terdapat tekanan kuat dari komuniti untuk mempromosikan pembangun Danny Ryan ke jawatan kepimpinan. Ryan, yang meninggalkan EF pada 2024 disebabkan masalah kesihatan, menyatakan bahawa “sebahagian perbincangan telah menjadi tidak produktif.” Dia menambah bahawa EF sedang berkembang dan semakin baik. Situasi ini menunjukkan ketegangan antara keinginan Buterin untuk mereformasi Foundation sambil mengekalkan kawalan ke atas keputusan kepimpinan. \n\nHarga ETH telah meningkat 2.4% pada hari itu kepada $3,330, tetapi kebanyakan altcoin lain masih lebih baik. Aset ini gagal mengikuti kenaikan Bitcoin, XRP, dan Solana dan masih turun 32% dari paras tertinggi sepanjang masa pada 2021. Ketegangan dalam komuniti Ethereum tidaklah baru, dan ekosistem ini telah bertahan dan berkembang. \n\n---\n\nTension yang semakin meningkat di Ethereum Foundation telah mencetuskan perbincangan dalam komuniti crypto ketika harga aset terus rendah. Pada 21 Januari, pengasas bersama Ethereum, Vitalik Buterin, menegaskan kuasa mutlaknya dalam keputusan kepimpinan Ethereum Foundation, menyatakan bahawa ia akan kekal sehingga reformasi menubuhkan \"lembaga yang betul.\" Buterin berkata, “Saya adalah orang yang menentukan pasukan kepimpinan baru EF. Salah satu matlamat reformasi ini adalah untuk memberikan EF ‘lembaga yang betul’, tetapi sehingga itu, ia adalah saya.” Ini adalah jawapan kepada kritikan besar terhadap Aya Miyaguchi, pengarah eksekutif Foundation sejak 2018, yang dituduh tidak berkesan semasa memegang jawatan. Buterin juga menekankan bahawa mereka tidak akan terlibat dalam perubahan ideologi atau melobi politik. Terdapat tekanan kuat dari komuniti untuk mempromosikan pembangun Danny Ryan ke jawatan kepimpinan. Ryan, yang meninggalkan EF pada 2024 disebabkan masalah kesihatan, menyatakan bahawa “sebahagian perbincangan telah menjadi tidak produktif.” Dia menambah bahawa EF sedang berkembang dan semakin baik. Situasi ini menunjukkan ketegangan antara keinginan Buterin untuk mereformasi Foundation sambil mengekalkan kawalan ke atas keputusan kepimpinan. \n\nHarga ETH telah meningkat 2.4% pada hari itu kepada $3,330, tetapi kebanyakan altcoin lain masih lebih baik. Aset ini gagal mengikuti kenaikan Bitcoin, XRP, dan Solana dan masih turun 32% dari paras tertinggi sepanjang masa pada 2021. Ketegangan dalam komuniti Ethereum tidaklah baru, dan ekosistem ini telah bertahan dan berkembang. ",
+            "timestamp": "2025-01-22T08:51:41.959452",
+            "is_hot": false
+        },
+        {
+            "title": "Syarikat Kripto UAE Mengaku Melakukan Perdagangan Palsu di Uniswap, Menghadapi Larangan dari AS.\n\nSyarikat Kripto UAE mengaku terlibat dalam perdagangan palsu di Uniswap dan kini menghadapi larangan dari Amerika Syarikat.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353836343639/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://beincrypto.com/wp-content/uploads/2023/04/bic_scammer_negative_money_smile_sad.jpg.optimal.jpg",
+            "panic_score": null,
+            "full_content": "CLS Global, sebuah firma perkhidmatan kewangan yang berfungsi sebagai \"pencipta pasaran\" dalam industri kripto, telah bersetuju untuk menyelesaikan tuduhan jenayah berkaitan manipulasi pasaran yang menipu pelabur dengan menghasilkan volum dagangan palsu melalui perdagangan sendiri secara automatik di Uniswap. Menurut pengumuman dari Pejabat Peguam AS di Boston, CLS Global akan membayar $428,059. Denda ini termasuk kedua-dua penalti dan rampasan aset kripto. Selain itu, firma ini juga akan diharamkan daripada menyertai pasaran kripto di AS. Firma ini akan mengaku bersalah terhadap tuduhan yang dibawa dalam dakwaan 2024 oleh juri besar persekutuan di Boston, termasuk konspirasi untuk melakukan manipulasi pasaran dan penipuan wayar. CLS Global dituduh terlibat dalam \"perdagangan basuh,\" iaitu amalan penipuan di mana syarikat meningkatkan volum dagangan kripto secara artifisial untuk menipu pelabur. Perdagangan basuh melibatkan pembelian dan penjualan aset yang sama secara serentak, mencipta ilusi aktiviti pasaran tanpa risiko pasaran sebenar. Syarikat ini, yang berpusat di Emiriah Arab Bersatu, menyediakan perkhidmatan pencipta pasaran untuk perniagaan kripto. Walaupun terletak di luar AS, CLS Global menawarkan perkhidmatannya kepada pelabur AS melalui laman web dan bahan promosi awamnya. Tuduhan ini mengikuti penyiasatan FBI secara bawah tanah yang menyasarkan perdagangan basuh kripto. Sebagai sebahagian daripada siasatan tersebut, pihak berkuasa telah menubuhkan perniagaan kripto palsu bernama NexFundAI. CLS Global kemudian diupah untuk menghasilkan volum dagangan secara artifisial bagi token NexFundAI untuk memenuhi syarat penyenaraian bursa kripto. Dalam mesyuarat yang diadakan pada pertengahan 2024, seorang pekerja CLS Global menjelaskan bahawa firma itu boleh “membantu dengan penghasilan volum” dengan menggunakan algoritma yang membuatkan ia kelihatan seolah-olah terdapat aktiviti dagangan organik. Pekerja itu mengakui bahawa amalan tersebut adalah perdagangan basuh tetapi meremehkan implikasi etika. \n\n**Terjemahan dalam Bahasa Melayu:**\n\nCLS Global, sebuah firma perkhidmatan kewangan yang berfungsi sebagai \"pencipta pasaran\" dalam industri kripto, telah bersetuju untuk menyelesaikan tuduhan jenayah berkaitan manipulasi pasaran yang menipu pelabur dengan menghasilkan volum dagangan palsu melalui perdagangan sendiri secara automatik di Uniswap. Menurut pengumuman dari Pejabat Peguam AS di Boston, CLS Global akan membayar $428,059. Denda ini termasuk kedua-dua penalti dan rampasan aset kripto. Selain itu, firma ini juga akan diharamkan daripada menyertai pasaran kripto di AS. Firma ini akan mengaku bersalah terhadap tuduhan yang dibawa dalam dakwaan 2024 oleh juri besar persekutuan di Boston, termasuk konspirasi untuk melakukan manipulasi pasaran dan penipuan wayar. CLS Global dituduh terlibat dalam \"perdagangan basuh,\" iaitu amalan penipuan di mana syarikat meningkatkan volum dagangan kripto secara artifisial untuk menipu pelabur. Perdagangan basuh melibatkan pembelian dan penjualan aset yang sama secara serentak, mencipta ilusi aktiviti pasaran tanpa risiko pasaran sebenar. Syarikat ini, yang berpusat di Emiriah Arab Bersatu, menyediakan perkhidmatan pencipta pasaran untuk perniagaan kripto. Walaupun terletak di luar AS, CLS Global menawarkan perkhidmatannya kepada pelabur AS melalui laman web dan bahan promosi awamnya. Tuduhan ini mengikuti penyiasatan FBI secara bawah tanah yang menyasarkan perdagangan basuh kripto. Sebagai sebahagian daripada siasatan tersebut, pihak berkuasa telah menubuhkan perniagaan kripto palsu bernama NexFundAI. CLS Global kemudian diupah untuk menghasilkan volum dagangan secara artifisial bagi token NexFundAI untuk memenuhi syarat penyenaraian bursa kripto. Dalam mesyuarat yang diadakan pada pertengahan 2024, seorang pekerja CLS Global menjelaskan bahawa firma itu boleh “membantu dengan penghasilan volum” dengan menggunakan algoritma yang membuatkan ia kelihatan seolah-olah terdapat aktiviti dagangan organik. Pekerja itu mengakui bahawa amalan tersebut adalah perdagangan basuh tetapi meremehkan implikasi etika.",
+            "timestamp": "2025-01-22T08:51:42.629840",
+            "is_hot": false
+        },
+        {
+            "title": "HTX menunjukkan prestasi aset pada tahun 2024, dengan 218 aset spot disenaraikan dan pemenang tertinggi meningkat 16,000%.\n\nTranslation: HTX menunjukkan prestasi aset pada tahun 2024, dengan 218 aset spot disenaraikan dan pemenang tertinggi meningkat 16,000%.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353836343638/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://beincrypto.com/wp-content/uploads/2025/01/image2.jpg.optimal.jpg",
+            "panic_score": null,
+            "full_content": "HTX, bursa kripto terkemuka di dunia, telah mengeluarkan Laporan Aset 2024, menonjolkan pencapaian luar biasa platform ini dalam metrik utama, kemampuan menjana kekayaan, dan kemajuan ekosistem dalam setahun yang lalu. Pada tahun 2024, HTX mencapai jumlah perdagangan kira-kira $2.4 trilion, dengan pertumbuhan 100% berbanding tahun sebelumnya. HTX menyenaraikan 218 aset spot dalam sektor yang sedang trending seperti DePIN, RWA, koin meme, dan SunPump, termasuk 171 pelancaran eksklusif pertama di pasaran. Untuk perdagangan hadapan, lebih daripada 80 aset ditambahkan ke platform, dengan hampir 70 aset, atau lebih 90%, mengalami keuntungan melebihi 200%. Menjelang akhir 2024, HTX menyokong lebih daripada 160 aset perdagangan hadapan, memberikan pengguna pelbagai pilihan perdagangan. Kemampuan HTX dalam menjana kekayaan datang dari pelbagai tawaran aset, pelancaran baru yang cepat, dan inovasi yang kukuh. Setiap bulan, sekurang-kurangnya satu token menjanjikan disenaraikan, menghasilkan keuntungan yang luar biasa. HTX terus memperkenalkan aset yang menjanjikan, memberikan pulangan yang luar biasa kepada pengguna. HTX berbeza daripada bursa utama lain dengan kecekapan dalam penyenaraian aset dan penglibatan komuniti. HTX sentiasa komited untuk memenuhi keperluan komuniti dengan menawarkan pelbagai pilihan pelaburan dan memperkayakan portfolio aset pengguna. Sebagai tahun 2025 mendatang, HTX akan terus mengembangkan kategori aset dengan menambah lebih banyak kripto berpotensi tinggi untuk peluang kekayaan yang lebih luas.\n\nTerjemahan dalam Bahasa Melayu:\nHTX, bursa kripto terkemuka di dunia, telah mengeluarkan Laporan Aset 2024, menonjolkan pencapaian luar biasa platform ini dalam metrik utama, kemampuan menjana kekayaan, dan kemajuan ekosistem dalam setahun yang lalu. Pada tahun 2024, HTX mencapai jumlah perdagangan kira-kira $2.4 trilion, dengan pertumbuhan 100% berbanding tahun sebelumnya. HTX menyenaraikan 218 aset spot dalam sektor yang sedang trending seperti DePIN, RWA, koin meme, dan SunPump, termasuk 171 pelancaran eksklusif pertama di pasaran. Untuk perdagangan hadapan, lebih daripada 80 aset ditambahkan ke platform, dengan hampir 70 aset, atau lebih 90%, mengalami keuntungan melebihi 200%. Menjelang akhir 2024, HTX menyokong lebih daripada 160 aset perdagangan hadapan, memberikan pengguna pelbagai pilihan perdagangan. Kemampuan HTX dalam menjana kekayaan datang dari pelbagai tawaran aset, pelancaran baru yang cepat, dan inovasi yang kukuh. Setiap bulan, sekurang-kurangnya satu token menjanjikan disenaraikan, menghasilkan keuntungan yang luar biasa. HTX terus memperkenalkan aset yang menjanjikan, memberikan pulangan yang luar biasa kepada pengguna. HTX berbeza daripada bursa utama lain dengan kecekapan dalam penyenaraian aset dan penglibatan komuniti. HTX sentiasa komited untuk memenuhi keperluan komuniti dengan menawarkan pelbagai pilihan pelaburan dan memperkayakan portfolio aset pengguna. Sebagai tahun 2025 mendatang, HTX akan terus mengembangkan kategori aset dengan menambah lebih banyak kripto berpotensi tinggi untuk peluang kekayaan yang lebih luas.",
+            "timestamp": "2025-01-22T08:51:43.166459",
+            "is_hot": false
+        },
+        {
+            "title": "Arbitrum (ARB) Bersedia Untuk Kenaikan 46% Jika Ini Berlaku, Kata Penganalisis.\n\nTranslation in Malay: Arbitrum (ARB) bersedia untuk kenaikan 46% jika ini berlaku, kata penganalisis.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353836313736/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://www.newsbtc.com/wp-content/uploads/2025/01/arb.png?fit=1792%2C1024",
+            "panic_score": null,
+            "full_content": "Ralat mengambil kandungan.",
+            "timestamp": "2025-01-22T08:51:53.187352",
+            "is_hot": false
+        },
+        {
+            "title": "Kenaikan Kripto Zaman Trump Mendorong Pelancaran Pemohonan ETF Koin Meme.\n\nKenaikan Kripto Zaman Trump Mendorong Pelancaran Pemohonan ETF Koin Meme.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353836313537/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://cryptodnes.bg/en/wp-content/uploads/sites/2/2023/09/tradingggggg58.webp",
+            "panic_score": null,
+            "full_content": "Donald Trump’s election in November 2024 menyebabkan kenaikan harga cryptocurrency, kerana reputasinya sebagai pemimpin pro-crypto. Janji kempen beliau, termasuk menubuhkan simpanan Bitcoin strategik untuk AS dan melancarkan koin meme sendiri pada 17 Januari, meningkatkan harapan. Namun, ucapan pelantikan Trump tidak menyebut cryptocurrency, membuat pelabur tertanya-tanya tentang dasar spesifiknya. Walaupun begitu, semangat pasaran tetap kuat, dengan pelabur runcit dan institusi menyokong kenaikan ini. Minat institusi, yang biasanya lebih konservatif, menunjukkan keselarasan yang mengejutkan dengan semangat yang sedang berkembang. Pendaftaran terbaru oleh Suruhanjaya Sekuriti dan Bursa (SEC) pada 21 Januari menunjukkan rancangan oleh REX Shares dan Osprey Funds untuk melancarkan tujuh dana yang diperdagangkan di bursa cryptocurrency (ETFs). Antara ini, dua ETFs berdasarkan Dogecoin (DOGE) dan koin meme Trump (TRUMP) menonjol sebagai yang pertama di pasaran. Pendaftaran ini juga merangkumi rancangan untuk Bitcoin, Ethereum (ETH), Solana (SOL), dan XRP ETFs. Menurut penganalisis James Seyffart, dana ini akan didaftarkan di bawah Akta 1940, mirip dengan ETF masa depan crypto. Struktur ini membolehkan ETF untuk termasuk campuran derivatif dan pegangan aset langsung, diurus melalui anak syarikat yang berpangkalan di Cayman Islands. Walaupun pengenalan ETF koin meme adalah yang pertama, ada persoalan tentang bagaimana dana ini akan menguruskan turun naik yang ekstrem yang berkaitan dengan aset berasaskan meme. ETF cryptocurrency berkapitalisasi besar secara sejarah menarik aliran masuk yang besar, tetapi sama ada tawaran baru ini dapat menarik minat yang sama—atau sesuai dengan toleransi risiko kebanyakan pelabur—masih belum pasti. \n\nDalam kenyataan pertamanya sebagai presiden AS yang baru, Donald Trump menyebut koin meme yang baru dilancarkan, Official Trump (TRUMP). Dalam langkah yang penting, Presiden Donald Trump mengumumkan bahawa beliau telah memberikan pengampunan penuh kepada Ross Ulbricht, pengasas pasar Silk Road. \n\nAnalisis oleh seorang penganalisis crypto yang terkenal, yang dikenal pasti kerana ramalannya yang tepat tentang pembetulan Bitcoin sebelum pemotongan tahun lalu, mencadangkan bahawa altcoin bersedia untuk kenaikan yang signifikan dan mungkin akan mengatasi Bitcoin tidak lama lagi.",
+            "timestamp": "2025-01-22T08:51:54.176045",
+            "is_hot": false
+        },
+        {
+            "title": "Peter Schiff menyebut Bitcoin sebagai koin meme, menyebabkan reaksi negatif dari komuniti kripto.\n\nPeter Schiff calls Bitcoin a meme coin, causing backlash from the crypto community.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353836313536/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://cryptodnes.bg/en/wp-content/uploads/sites/2/2022/10/peter-schiff-bitcoin.webp",
+            "panic_score": null,
+            "full_content": "Peter Schiff, seorang pengkritik Bitcoin yang lama, telah mencetuskan kontroversi sekali lagi dengan menyebut cryptocurrency utama itu sebagai \"meme coin.\" Dalam satu pos media sosial baru-baru ini, Schiff mengejek penyokong Bitcoin, Anthony Pompliano, yang cuba menjelaskan tentang meme coin dalam satu wawancara CNBC. Schiff mendakwa bahawa tidak banyak perbezaan antara Bitcoin dan meme cryptocurrency lain yang popular. Komennya menghidupkan semula perdebatan dalam komuniti crypto, terutamanya ketika meme coin semakin mendapat perhatian. Banyak penyokong Bitcoin yang mempunyai pandangan lebih tradisional telah menjauhkan diri daripada trend meme coin ini, bimbang ia boleh merosakkan reputasi industri yang lebih luas. Schiff, yang terkenal skeptikal terhadap Bitcoin sejak awal, sering menolak idea bahawa ia boleh bersaing dengan emas. Beliau menyebut emas sebagai \"wang sebenar,\" dan merujuk Bitcoin sebagai \"emas bodoh.\" Pandangan ini menjadikan Schiff figura yang polarizing, sementara pengkritiknya menuduhnya menggunakan Bitcoin untuk kekal relevan. \n\nBitcoin telah mencapai paras tertinggi baru sekitar $110,000 pada 20 Januari, setelah pulih dengan cepat selepas jatuh kepada $89,700 lebih awal dalam minggu tersebut. El Salvador terus mengembangkan simpanan Bitcoinnya, baru-baru ini menambah 12 BTC bernilai lebih daripada $1 juta, walaupun terdapat komitmen untuk mengurangkan aktiviti crypto di bawah perjanjian dengan Tabung Kewangan Antarabangsa (IMF). \n\nBitcoin telah melepasi $109,000, mencatatkan paras tertinggi baru, dipacu oleh keterujaan sekitar pelantikan Donald Trump.",
+            "timestamp": "2025-01-22T08:51:55.203105",
+            "is_hot": false
+        },
+        {
+            "title": "Dogecoin: Bolehkah corak kenaikan ini membantu DOGE mencapai $2.77? \n\nTranslation in Malay: Dogecoin: Bolehkah corak kenaikan ini membantu DOGE mencapai $2.77?",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353836313834/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://ambcrypto.com/wp-content/uploads/2025/01/Editors-2025-01-22T115639.038-1000x600.jpg",
+            "panic_score": null,
+            "full_content": "DOGE meningkat 9.57% apabila transaksi besar meningkat, dengan sasaran bullish pennant pada $2.77. Adakah kenaikan ini akan berterusan? Dogecoin [DOGE] menunjukkan aktiviti pasaran yang kuat, disokong oleh peningkatan transaksi besar dan pola teknikal yang positif. DOGE meningkat 2.01% dalam 24 jam lalu kepada $0.3778, dengan peningkatan 9.57% dalam tujuh hari lalu. Nilai pasaran Dogecoin kini berada pada $55.98 bilion, dengan bekalan yang beredar sebanyak 150 bilion syiling dan volum dagangan 24 jam sebanyak $9.93 bilion. Transaksi besar meningkat di rangkaian Dogecoin, dengan 588 transaksi melebihi $1 juta dicatatkan dalam 24 jam lalu. Walau bagaimanapun, Whale Alert melaporkan transaksi sebanyak 400 juta DOGE, bernilai kira-kira $137 juta, dipindahkan ke Binance. Sejarah menunjukkan bahawa pemindahan seperti ini boleh menandakan kemungkinan penjualan, menyebabkan peserta pasaran lebih berhati-hati. Trader akan memantau perkembangan ini untuk menilai kemungkinan pergerakan harga jangka pendek. Pada carta mingguan, Dogecoin telah keluar dari pola bullish pennant, menandakan potensi kesinambungan tren menaik. Menurut Trader Tardigrade, sasaran pola ini adalah $2.77, menunjukkan potensi kenaikan yang besar dari tahap semasa. Jumlah dagangan yang berterusan adalah penting untuk mengesahkan lonjakan ini dan mencapai sasaran harga. Carta DOGE/USD 4-jam menunjukkan harga dagangan berhampiran Bollinger Band bawah pada $0.3754, menunjukkan keadaan oversold. Indeks Aliran Wang (MFI) pada 35.10 menyokong pandangan ini, kerana ia menghampiri zon oversold. Rintangan segera terletak pada garis tengah Bollinger Bands pada $0.37679 dan band atas pada $0.41346. Memecahkan tahap ini adalah penting untuk DOGE mendapatkan momentum bullish semula. Aktiviti rangkaian dan harga Dogecoin mencerminkan peningkatan momentum, didorong oleh transaksi besar dan pandangan teknikal yang positif. Walaupun aktiviti whale membawa sedikit kebimbangan, penganalisis optimis tentang trajektori jangka panjang, dengan sasaran harga mungkin $2.77 jika pola bullish kekal. Trader sedang memantau rintangan $0.41 dan tingkah laku whale sebagai indikator penting untuk langkah seterusnya cryptocurrency ini.",
+            "timestamp": "2025-01-22T08:51:55.489106",
+            "is_hot": false
+        },
+        {
+            "title": "Uniswap versi 4 akan mula dilancarkan minggu ini. \n\nTranslation in Malay: Uniswap versi 4 akan mula dilancarkan minggu ini.",
+            "url": "https://cryptopanic.com/news/external/3332373338342D3230353836313533/?mtm_campaign=API-OPA",
+            "description": "",
+            "image": "https://www.tbstat.com/wp/uploads/2023/06/20230606_GeneralFeaturedImage.jpg",
+            "panic_score": null,
+            "full_content": "Akses kepada URL sumber adalah dilarang.",
+            "timestamp": "2025-01-22T08:51:55.745461",
+            "is_hot": false
+        },
         {
             "title": "Berita Terkini: Presiden Trump mengampuni ketua Silk Road, Ross Ulbricht.",
             "url": "https://cryptopanic.com/news/click/20585058/",
