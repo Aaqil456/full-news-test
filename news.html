@@ -33,10 +33,10 @@
             border-radius: 15px;
             margin-bottom: 20px;
         }
-        .news-content {
+        .news-content p {
             font-size: 16px;
             text-align: justify; /* Justify text for a cleaner look */
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .buttons {
             display: flex;
@@ -112,10 +112,11 @@
                     const news = filteredNews[newsId];
                     if (news) {
                         const container = document.getElementById('news-container');
+                        const paragraphs = news.full_content.split("\n\n").map(paragraph => `<p>${paragraph.trim()}</p>`).join("");
                         container.innerHTML = `
                             <h1 class="news-title">${news.title}</h1>
                             <img src="${news.image}" alt="${news.title}" class="news-image">
-                            <div class="news-content">${news.full_content}</div>
+                            <div class="news-content">${paragraphs}</div>
                             <div class="buttons">
                                 <a href="index.html" class="back-button">Kembali</a>
                                 <a href="${decodeURIComponent(newsUrl)}" target="_blank" class="original-link">Baca Artikel Asal</a>
