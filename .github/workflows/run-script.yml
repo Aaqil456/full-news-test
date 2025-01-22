@@ -39,7 +39,7 @@ jobs:
       - name: Run translation script
         env:
           CRYPTOPANIC_API_KEY: ${{ secrets.CRYPTOPANIC_API_KEY }}
-          EASY_PEASY_API_KEY: ${{ secrets.EASY_PEASY_API_KEY }}
+          EASY_PEASY_TRANSLATE_KEY: ${{ secrets.EASY_PEASY_TRANSLATE_KEY }}
           EASY_PEASY_REPHRASE_KEY: ${{ secrets.EASY_PEASY_REPHRASE_KEY }}
         run: python cryptonews_translator.py
 
