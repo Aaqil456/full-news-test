@@ -113,7 +113,7 @@ def rephrase_text_easypeasy(api_key, text):
         "x-api-key": api_key
     }
     payload = {
-        "message": f"susun semula ayat-ayat '{text}'ini dalam perenggan dan susunan yang cantik.",
+        "message": f"rephrase this article and remove Non-article content such as, disclaimers, ads, or copyright information from it. Your answer must be in malay language.this is the article '{text}'",
         "history": [],
         "stream": False
     }
