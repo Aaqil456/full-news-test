@@ -51,7 +51,10 @@ def fetch_news_content(url):
             soup = BeautifulSoup(response.content, 'html.parser')
             # Extract meaningful content - Adjust based on the website's structure
             content = " ".join(p.get_text() for p in soup.find_all('p'))
-            return content
+
+            # Split content into paragraphs for better readability
+            structured_content = split_into_paragraphs(content)
+            return structured_content
         elif response.status_code == 403:
             return "Access to the source URL is forbidden."
         elif response.status_code == 404:
@@ -62,6 +65,27 @@ def fetch_news_content(url):
     except requests.exceptions.RequestException as e:
         print(f"[ERROR] Exception occurred while fetching {url}: {e}")
         return "Error fetching content."
+
+# Function to split content into paragraphs
+def split_into_paragraphs(content, max_length=300):
+    """Splits content into paragraphs with a max length for each paragraph."""
+    words = content.split()
+    paragraphs = []
+    current_paragraph = []
+
+    for word in words:
+        current_paragraph.append(word)
+        # Check if the current paragraph exceeds max length
+        if len(" ".join(current_paragraph)) > max_length:
+            paragraphs.append(" ".join(current_paragraph))
+            current_paragraph = []
+
+    # Append the remaining words as the last paragraph
+    if current_paragraph:
+        paragraphs.append(" ".join(current_paragraph))
+
+    # Combine paragraphs into a structured format
+    return "\n\n".join(paragraphs)
 
 # Function to translate text using Easy Peasy API
 def translate_text_easypeasy(api_key, text):
