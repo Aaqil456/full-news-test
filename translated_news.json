@@ -1,1 +1,24 @@
 
+{
+    "timestamp": "2025-01-22 08:22:12",
+    "all_news": [
+        {
+            "title": "Berita Terkini: Presiden Trump mengampuni ketua Silk Road, Ross Ulbricht.",
+            "url": "https://cryptopanic.com/news/click/20585058/",
+            "description": "",
+            "image": "https://statics.ambcrypto.com/wp-content/uploads/2023/04/cropped-ambcrypto-favicon-270x270.png",
+            "panic_score": null,
+            "timestamp": "2025-01-22T08:20:53.840524",
+            "is_hot": true
+        },
+        {
+            "title": "\"Trump mengampuni Ross Ulbricht, memenuhi janji kempen.\"",
+            "url": "https://cryptopanic.com/news/click/20585044/",
+            "description": "",
+            "image": "https://static.cryptobriefing.com/wp-content/uploads/2025/01/21101246/bb81cb9c-feed-4582-a7af-2688af2f1ef9-800x420.jpg",
+            "panic_score": null,
+            "timestamp": "2025-01-22T08:20:53.840534",
+            "is_hot": true
+        }
+    ]
+}
