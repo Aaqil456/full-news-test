@@ -64,7 +64,7 @@ jobs:
           ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
         run: |
           curl -X POST \
-          -H "Authorization: token $GITHUB_TOKEN" \
+          -H "Authorization: token $ACTIONS_PAT" \
           -H "Accept: application/vnd.github.v3+json" \
           https://api.github.com/repos/Aaqil456/translated-news/dispatches \
           -d '{"event_type":"trigger-second-workflow"}'
