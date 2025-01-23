@@ -1,9 +1,8 @@
 name: Run Translation Script and Deploy to Pages
 
 on:
-  # Uncomment the following lines to enable the hourly schedule
   schedule:
-     - cron: "0 * * * *"  # Run every hour
+    - cron: "0 * * * *"  # Run every hour
   workflow_dispatch:  # Allows manual execution from the Actions tab
 
 permissions:
@@ -59,3 +58,13 @@ jobs:
         run: |
           curl -X POST -H "Authorization: token ${{ secrets.ACTIONS_PAT }}" \
           https://api.github.com/repos/${{ github.repository }}/pages/builds
+
+      - name: Trigger Second Repository Workflow
+        env:
+          ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
+        run: |
+          curl -X POST \
+          -H "Authorization: token $GITHUB_TOKEN" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/Aaqil456/translated-news/dispatches \
+          -d '{"event_type":"trigger-second-workflow"}'
