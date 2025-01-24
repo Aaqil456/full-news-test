@@ -3,6 +3,8 @@ import os
 import requests
 import json
 from datetime import datetime
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
 
 # Function to fetch news from Apify Actor API
 def fetch_news_from_apify(api_token):
