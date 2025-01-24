@@ -10,22 +10,20 @@
             margin: 20px;
             background-color: black;
             color: white;
-            line-height: 1.6; /* Better line spacing for readability */
+            line-height: 1.6;
         }
         .news-container {
             max-width: 800px;
             margin: auto;
-            background-color: #222; /* Slightly lighter background for better contrast */
+            background-color: #222;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a subtle shadow for a card effect */
         }
         .news-title {
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 20px;
             text-align: center;
-            text-transform: capitalize;
         }
         .news-image {
             width: 100%;
@@ -35,7 +33,7 @@
         }
         .news-content p {
             font-size: 16px;
-            text-align: justify; /* Justify text for a cleaner look */
+            text-align: justify;
             margin-bottom: 15px;
         }
         .buttons {
@@ -44,7 +42,6 @@
             margin-top: 20px;
         }
         .back-button, .original-link {
-            display: block;
             padding: 10px 20px;
             background-color: #00e2b1;
             color: black;
@@ -52,25 +49,9 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            width: 48%;
-            text-transform: uppercase;
         }
         .back-button:hover, .original-link:hover {
             background-color: #00c08a;
-        }
-        /* Custom Scrollbar Styles */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #1a1a1a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #00e2b1;
-            border-radius: 5px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #00c08a;
         }
     </style>
 </head>
@@ -84,56 +65,31 @@
             return urlParams.get(param);
         };
 
-        const filterType = getQueryParam('filter'); // 'all' or 'hot'
-        const newsId = parseInt(getQueryParam('id'), 10); // Extract numeric ID
-        const newsUrl = getQueryParam('url');
+        const newsId = parseInt(getQueryParam('id'), 10);
 
-        console.log(`Filter Type: ${filterType}, News ID: ${newsId}, News URL: ${newsUrl}`);
-
-        if (filterType !== null && !isNaN(newsId)) {
-            fetch('https://aaqil456.github.io/test-news/translated_news.json')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! Status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    console.log('Fetched data:', data);
-
-                    // Filter news based on the filter type
-                    const filteredNews = data.all_news.filter(news => 
-                        (filterType === 'hot' && news.is_hot) || 
-                        (filterType === 'all' && !news.is_hot)
-                    );
-
-                    console.log('Filtered News:', filteredNews);
-
-                    const news = filteredNews[newsId];
-                    if (news) {
-                        const container = document.getElementById('news-container');
-                        const paragraphs = news.full_content.split("\n\n").map(paragraph => `<p>${paragraph.trim()}</p>`).join("");
-                        container.innerHTML = `
-                            <h1 class="news-title">${news.title}</h1>
-                            <img src="${news.image}" alt="${news.title}" class="news-image">
-                            <div class="news-content">${paragraphs}</div>
-                            <div class="buttons">
-                                <a href="index.html" class="back-button">Kembali</a>
-                                <a href="${decodeURIComponent(newsUrl)}" target="_blank" class="original-link">Baca Artikel Asal</a>
-                            </div>
-                        `;
-                    } else {
-                        document.getElementById('news-container').innerHTML = '<p>News not found.</p>';
-                    }
-                })
-                .catch(err => {
-                    console.error('Error fetching news:', err);
-                    document.getElementById('news-container').innerHTML = '<p>Error loading news. Please try again later.</p>';
-                });
-        } else {
-            console.error('Invalid filter type or news ID');
-            document.getElementById('news-container').innerHTML = '<p>Invalid news ID or filter type.</p>';
-        }
+        fetch('translated_news.json')
+            .then(response => response.json())
+            .then(data => {
+                const news = data.all_news[newsId];
+                if (news) {
+                    const container = document.getElementById('news-container');
+                    container.innerHTML = `
+                        <h1 class="news-title">${news.title}</h1>
+                        <img src="${news.image}" alt="${news.title}" class="news-image">
+                        <div class="news-content">${news.content}</div>
+                        <div class="buttons">
+                            <a href="index.html" class="back-button">Kembali</a>
+                            <a href="${news.url}" target="_blank" class="original-link">Baca Artikel Asal</a>
+                        </div>
+                    `;
+                } else {
+                    document.getElementById('news-container').innerHTML = '<p>News not found.</p>';
+                }
+            })
+            .catch(err => {
+                console.error('Error fetching news:', err);
+                document.getElementById('news-container').innerHTML = '<p>Error loading news. Please try again later.</p>';
+            });
     </script>
 </body>
 </html>
