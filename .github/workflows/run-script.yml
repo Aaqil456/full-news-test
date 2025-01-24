@@ -1,8 +1,6 @@
 name: Run Translation Script and Deploy to Pages
 
 on:
- # schedule:
-    #- cron: "0 */2 * * *"  # Run every 2 hour
   workflow_dispatch:  # Allows manual execution from the Actions tab
 
 permissions:
@@ -26,20 +24,24 @@ jobs:
           pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
           pip install transformers requests sentencepiece beautifulsoup4
 
-      - name: Verify ACTIONS_PAT Secret
+      - name: Verify Secrets
         env:
-          ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
+          APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
+          EASY_PEASY_TRANSLATE_KEY: ${{ secrets.EASY_PEASY_TRANSLATE_KEY }}
         run: |
-          if [ -z "${ACTIONS_PAT}" ]; then
-            echo "ACTIONS_PAT is not set!"
+          if [ -z "${APIFY_API_TOKEN}" ]; then
+            echo "APIFY_API_TOKEN is not set!"
+            exit 1
+          fi
+          if [ -z "${EASY_PEASY_TRANSLATE_KEY}" ]; then
+            echo "EASY_PEASY_TRANSLATE_KEY is not set!"
             exit 1
           fi
 
       - name: Run translation script
         env:
-          CRYPTOPANIC_API_KEY: ${{ secrets.CRYPTOPANIC_API_KEY }}
+          APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
           EASY_PEASY_TRANSLATE_KEY: ${{ secrets.EASY_PEASY_TRANSLATE_KEY }}
-          EASY_PEASY_REPHRASE_KEY: ${{ secrets.EASY_PEASY_REPHRASE_KEY }}
         run: python cryptonews_translator.py
 
       - name: Commit and push changes
@@ -58,13 +60,3 @@ jobs:
         run: |
           curl -X POST -H "Authorization: token ${{ secrets.ACTIONS_PAT }}" \
           https://api.github.com/repos/${{ github.repository }}/pages/builds
-
-      - name: Trigger Second Repository Workflow
-        env:
-          ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
-        run: |
-          curl -X POST \
-          -H "Authorization: token $ACTIONS_PAT" \
-          -H "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/repos/Aaqil456/translated-news/dispatches \
-          -d '{"event_type":"trigger-second-workflow"}'
