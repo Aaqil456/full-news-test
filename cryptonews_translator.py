@@ -10,21 +10,19 @@ from requests.packages.urllib3.util.retry import Retry
 def fetch_news_from_apify(api_token):
     url = f"https://api.apify.com/v2/acts/buseta~crypto-news/run-sync-get-dataset-items?token={api_token}"
     try:
-        session = requests.Session()
-        retries = Retry(total=3, backoff_factor=1, status_forcelist=[500, 502, 503, 504])
-        session.mount('https://', HTTPAdapter(max_retries=retries))
-        response = session.post(url, timeout=600)  # Increased timeout to 60 seconds
-        if response.status_code == 200:
-            news_data = response.json()
+        print("Triggering the Apify Actor...")
+        response = requests.post(url, timeout=600)  # Trigger the actor and wait for the response
+        if response.status_code == 201:  # 201 indicates successful creation with data returned
+            news_data = response.json()  # Parse the JSON response
             news_list = []
-            for news in news_data:
+            for news in news_data:  # Iterate through the list of news articles
                 news_list.append({
                     "title": news.get("title", "Untitled"),
                     "url": news.get("link", "#"),
-                    "description": news.get("description", "No description available."),
+                    "description": news.get("summary", "No summary available."),  # Using 'summary' for description
                     "image": news.get("image", ""),
                     "content": news.get("content", "No content available."),
-                    "timestamp": datetime.now().isoformat()
+                    "timestamp": news.get("time", datetime.now().isoformat())  # Use 'time' field if available
                 })
             return news_list
         else:
@@ -33,6 +31,7 @@ def fetch_news_from_apify(api_token):
     except requests.exceptions.RequestException as e:
         print(f"[ERROR] Exception occurred while fetching data from Apify: {e}")
         return []
+
 
 # Function to translate text using Easy Peasy API
 def translate_text_easypeasy(api_key, text):
