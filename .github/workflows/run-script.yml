@@ -2,6 +2,8 @@ name: Run Translation Script and Deploy to Pages
 
 on:
   workflow_dispatch:  # Allows manual execution from the Actions tab
+  schedule:
+    - cron: "0 * * * *"  # Runs the workflow at the start of every hour
 
 permissions:
   contents: write
