@@ -13,7 +13,7 @@ def fetch_news_from_apify(api_token):
         session = requests.Session()
         retries = Retry(total=3, backoff_factor=1, status_forcelist=[500, 502, 503, 504])
         session.mount('https://', HTTPAdapter(max_retries=retries))
-        response = session.post(url, timeout=60)  # Increased timeout to 60 seconds
+        response = session.post(url, timeout=600)  # Increased timeout to 60 seconds
         if response.status_code == 200:
             news_data = response.json()
             news_list = []
