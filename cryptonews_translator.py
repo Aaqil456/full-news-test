@@ -113,7 +113,7 @@ def rephrase_text_easypeasy(api_key, text):
         "x-api-key": api_key
     }
     payload = {
-        "message": f"rephrase this article and remove Non-article content such as, disclaimers, ads, or copyright information from it. Your answer must be in malay language.this is the article '{text}'",
+        "message": f"rephrase this article and remove Non-article content such as, disclaimers, ads, or copyright information from it. If you notice words that give the meaning like 'we failed to get the content' rephrase it and only show it once also make sure that after you rephrase you should show only the words that had been rephrased as your answer. Your answer must be in malay language.this is the article '{text}'",
         "history": [],
         "stream": False
     }
