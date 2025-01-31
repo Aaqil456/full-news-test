@@ -25,6 +25,7 @@ jobs:
         run: |
           pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
           pip install google-generativeai requests beautifulsoup4
+          pip install --upgrade google-generativeai
 
       - name: Verify Secrets
         env:
