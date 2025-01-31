@@ -24,26 +24,26 @@ jobs:
       - name: Install dependencies
         run: |
           pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
-          pip install transformers requests sentencepiece beautifulsoup4
+          pip install google-generativeai requests beautifulsoup4
 
       - name: Verify Secrets
         env:
           APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
-          EASY_PEASY_TRANSLATE_KEY: ${{ secrets.EASY_PEASY_TRANSLATE_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           if [ -z "${APIFY_API_TOKEN}" ]; then
             echo "APIFY_API_TOKEN is not set!"
             exit 1
           fi
-          if [ -z "${EASY_PEASY_TRANSLATE_KEY}" ]; then
-            echo "EASY_PEASY_TRANSLATE_KEY is not set!"
+          if [ -z "${GEMINI_API_KEY}" ]; then
+            echo "GEMINI_API_KEY is not set!"
             exit 1
           fi
 
       - name: Run translation script
         env:
           APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
-          EASY_PEASY_TRANSLATE_KEY: ${{ secrets.EASY_PEASY_TRANSLATE_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python cryptonews_translator.py
 
       - name: Commit and push changes
