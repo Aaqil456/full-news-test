@@ -8,24 +8,10 @@ import google.generativeai as genai
 # Configure Gemini API
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 
-generation_config = {
-    "temperature": 1.5,
-    "top_p": 0.95,
-    "top_k": 40,
-    "max_output_tokens": 8192,
-    "response_mime_type": "text/plain",
-}
-
-model = genai.GenerativeModel(
-    model_name="gemini-1.5-flash-8b",
-    generation_config=generation_config,
-)
-
 def translate_text_gemini(text):
     if not text:
         return ""
-    chat_session = model.start_chat(history=[])
-    response = chat_session.send_message(f"Translate this text '{text}' into Malay. Only return the translated text, structured like an article.")
+    response = genai.generate_content(f"Translate this text '{text}' into Malay. Only return the translated text, structured like an article.")
     return response.text.strip()
 
 # Function to fetch news from Apify Actor API
