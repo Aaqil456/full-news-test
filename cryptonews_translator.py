@@ -3,26 +3,48 @@ import os
 import requests
 import json
 from datetime import datetime
-from requests.adapters import HTTPAdapter
-from requests.packages.urllib3.util.retry import Retry
+import google.generativeai as genai
+
+# Configure Gemini API
+genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+
+generation_config = {
+    "temperature": 1.5,
+    "top_p": 0.95,
+    "top_k": 40,
+    "max_output_tokens": 8192,
+    "response_mime_type": "text/plain",
+}
+
+model = genai.GenerativeModel(
+    model_name="gemini-1.5-flash-8b",
+    generation_config=generation_config,
+)
+
+def translate_text_gemini(text):
+    if not text:
+        return ""
+    chat_session = model.start_chat(history=[])
+    response = chat_session.send_message(f"Translate this text '{text}' into Malay. Only return the translated text, structured like an article.")
+    return response.text.strip()
 
 # Function to fetch news from Apify Actor API
 def fetch_news_from_apify(api_token):
     url = f"https://api.apify.com/v2/acts/buseta~crypto-news/run-sync-get-dataset-items?token={api_token}"
     try:
         print("Triggering the Apify Actor...")
-        response = requests.post(url, timeout=600)  # Trigger the actor and wait for the response
-        if response.status_code == 201:  # 201 indicates successful creation with data returned
-            news_data = response.json()  # Parse the JSON response
+        response = requests.post(url, timeout=600)
+        if response.status_code == 201:
+            news_data = response.json()
             news_list = []
-            for news in news_data:  # Iterate through the list of news articles
+            for news in news_data:
                 news_list.append({
                     "title": news.get("title", "Untitled"),
                     "url": news.get("link", "#"),
-                    "description": news.get("summary", "No summary available."),  # Using 'summary' for description
+                    "description": news.get("summary", "No summary available."),
                     "image": news.get("image", ""),
                     "content": news.get("content", "No content available."),
-                    "timestamp": news.get("time", datetime.now().isoformat())  # Use 'time' field if available
+                    "timestamp": news.get("time", datetime.now().isoformat())
                 })
             return news_list
         else:
@@ -31,29 +53,6 @@ def fetch_news_from_apify(api_token):
     except requests.exceptions.RequestException as e:
         print(f"[ERROR] Exception occurred while fetching data from Apify: {e}")
         return []
-
-
-# Function to translate text using Easy Peasy API
-def translate_text_easypeasy(api_key, text):
-    if not text:
-        return ""
-    url = "https://bots.easy-peasy.ai/bot/e56f7685-30ed-4361-b6c1-8e17495b7faa/api"
-    headers = {
-        "content-type": "application/json",
-        "x-api-key": api_key
-    }
-    payload = {
-        "message": f"translate this text '{text}' into Malay language. Only return the translated text and make it structural like an article.",
-        "history": [],
-        "stream": False
-    }
-    response = requests.post(url, json=payload, headers=headers)
-    if response.status_code == 200:
-        response_data = response.json()
-        return response_data.get("bot", {}).get("text", "Translation failed")
-    else:
-        print(f"Translation API error: {response.status_code}, {response.text}")
-        return "Translation failed"
 
 # Function to load existing data
 def load_existing_data(filename="translated_news.json"):
@@ -82,24 +81,18 @@ def save_to_json(data, filename="translated_news.json"):
 # Main function
 def main():
     APIFY_API_TOKEN = os.getenv("APIFY_API_TOKEN")
-    EASY_PEASY_TRANSLATE_KEY = os.getenv("EASY_PEASY_TRANSLATE_KEY")
-
     if not APIFY_API_TOKEN:
         print("API token is missing! Please set APIFY_API_TOKEN as an environment variable.")
-        return
-
-    if not EASY_PEASY_TRANSLATE_KEY:
-        print("Translation API key is missing! Please set EASY_PEASY_TRANSLATE_KEY as an environment variable.")
         return
 
     print("Fetching news from Apify Actor API...")
     fetched_news = fetch_news_from_apify(APIFY_API_TOKEN)
 
-    print("Translating news content...")
+    print("Translating news content using Gemini API...")
     for news in fetched_news:
-        news["title"] = translate_text_easypeasy(EASY_PEASY_TRANSLATE_KEY, news["title"])
-        news["description"] = translate_text_easypeasy(EASY_PEASY_TRANSLATE_KEY, news["description"])
-        news["content"] = translate_text_easypeasy(EASY_PEASY_TRANSLATE_KEY, news["content"])
+        news["title"] = translate_text_gemini(news["title"])
+        news["description"] = translate_text_gemini(news["description"])
+        news["content"] = translate_text_gemini(news["content"])
 
     existing_data = load_existing_data()
     combined_news = remove_duplicates(fetched_news + existing_data.get("all_news", []))
