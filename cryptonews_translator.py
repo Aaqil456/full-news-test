@@ -6,15 +6,24 @@ from datetime import datetime
 import google.generativeai as genai
 
 # Configure Gemini API
-genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+genai.configure(api_key=os.environ.get("GEMINI_API_KEY", ""))
 
-model = genai.GenerativeModel("gemini-1.5-flash")
+# Initialize Gemini Model (Fixed)
+model = genai.GenerativeModel(model_name="gemini-1.5-flash")
 
+# Function to translate text using Gemini API
 def translate_text_gemini(text):
     if not text:
         return ""
-    response = model.generate_content(f"Translate this text '{text}' into Malay. Only return the translated text, structured like an article.")
-    return response.text.strip()
+    try:
+        response = model.generate_content(f"Translate this text '{text}' into Malay. Only return the translated text, structured like an article.")
+        if hasattr(response, "text") and response.text:
+            return response.text.strip()
+        else:
+            return "Translation failed"
+    except Exception as e:
+        print(f"[ERROR] Gemini API translation failed: {e}")
+        return "Translation failed"
 
 # Function to fetch news from Apify Actor API
 def fetch_news_from_apify(api_token):
@@ -77,13 +86,28 @@ def main():
     fetched_news = fetch_news_from_apify(APIFY_API_TOKEN)
 
     print("Translating news content using Gemini API...")
+    translated_news = []
+    
     for news in fetched_news:
-        news["title"] = translate_text_gemini(news["title"])
-        news["description"] = translate_text_gemini(news["description"])
-        news["content"] = translate_text_gemini(news["content"])
+        original_title = news["title"]
+        original_description = news["description"]
+        original_content = news["content"]
+
+        translated_title = translate_text_gemini(original_title)
+        translated_description = translate_text_gemini(original_description)
+        translated_content = translate_text_gemini(original_content)
+
+        # Only add the news item if at least one translation is successful
+        if translated_title != "Translation failed" or translated_description != "Translation failed" or translated_content != "Translation failed":
+            news["title"] = translated_title if translated_title != "Translation failed" else original_title
+            news["description"] = translated_description if translated_description != "Translation failed" else original_description
+            news["content"] = translated_content if translated_content != "Translation failed" else original_content
+            translated_news.append(news)
+        else:
+            print(f"Skipping news (translation failed for all fields): {original_title}")
 
     existing_data = load_existing_data()
-    combined_news = remove_duplicates(fetched_news + existing_data.get("all_news", []))
+    combined_news = remove_duplicates(translated_news + existing_data.get("all_news", []))
 
     save_to_json(combined_news)
 
