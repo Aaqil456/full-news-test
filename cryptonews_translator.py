@@ -3,26 +3,38 @@ import os
 import requests
 import json
 from datetime import datetime
-import google.generativeai as genai
 
-# Configure Gemini API
-genai.configure(api_key=os.environ.get("GEMINI_API_KEY", ""))
+# Define Gemini API URL
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}"
 
-# Initialize Gemini Model (Fixed)
-model = genai.GenerativeModel(model_name="gemini-1.5-flash")
-
-# Function to translate text using Gemini API
+# Function to translate text using Gemini API (via HTTP request)
 def translate_text_gemini(text):
     if not text:
         return ""
+
+    headers = {
+        "Content-Type": "application/json"
+    }
+    
+    payload = {
+        "contents": [{
+            "parts": [{"text": f"Translate this text '{text}' into Malay. Only return the translated text, structured like an article."}]
+        }]
+    }
+
     try:
-        response = model.generate_content(f"Translate this text '{text}' into Malay. Only return the translated text, structured like an article.")
-        if hasattr(response, "text") and response.text:
-            return response.text.strip()
+        response = requests.post(GEMINI_API_URL, headers=headers, json=payload)
+        if response.status_code == 200:
+            response_data = response.json()
+            # Extracting the translated text
+            translated_text = response_data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "Translation failed")
+            return translated_text.strip() if translated_text != "Translation failed" else "Translation failed"
         else:
+            print(f"Gemini API error: {response.status_code}, {response.text}")
             return "Translation failed"
     except Exception as e:
-        print(f"[ERROR] Gemini API translation failed: {e}")
+        print(f"[ERROR] Gemini API request failed: {e}")
         return "Translation failed"
 
 # Function to fetch news from Apify Actor API
