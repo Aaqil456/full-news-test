@@ -68,9 +68,10 @@ def remove_duplicates(news_list):
     seen_urls = set()
     unique_news = []
     for news in news_list:
-        if news["url"] not in seen_urls:
+        url = news.get("url", "#")  # Default to '#' if URL is missing
+        if url not in seen_urls:
             unique_news.append(news)
-            seen_urls.add(news["url"])
+            seen_urls.add(url)
     return unique_news
 
 # Function to save news to JSON
@@ -108,6 +109,7 @@ def main():
             news["title"] = translated_title if translated_title != "Translation failed" else original_title
             news["description"] = translated_description if translated_description != "Translation failed" else original_description
             news["content"] = translated_content if translated_content != "Translation failed" else original_content
+            news["url"] = news.get("url", "#")  # Ensure 'url' key exists
             translated_news.append(news)
         else:
             print(f"Skipping news (translation failed for all fields): {original_title}")
