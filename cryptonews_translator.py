@@ -8,38 +8,42 @@ from datetime import datetime
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GEMINI_API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}"
 
-# Function to translate text using Gemini API with rate limiting
-def translate_text_gemini(text):
-    if not text:
-        return ""
-
+# Function to translate text using Gemini API with batch processing and exponential backoff
+def translate_text_gemini(texts, max_retries=5):
+    if not texts:
+        return []
+    
     headers = {"Content-Type": "application/json"}
     payload = {
         "contents": [{
-            "parts": [{"text": f"Translate this text '{text}' into Malay. Only return the translated text, structured like an article."}]
+            "parts": [{"text": f"Translate this text '{text}' into Malay. Only return the translated text, structured like an article."} for text in texts]
         }]
     }
 
-    while True:
+    wait_time = 10  # Initial wait time for exponential backoff
+    for attempt in range(max_retries):
         try:
             response = requests.post(GEMINI_API_URL, headers=headers, json=payload)
             
             if response.status_code == 200:
                 response_data = response.json()
-                translated_text = response_data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "Translation failed")
-                return translated_text.strip() if translated_text != "Translation failed" else "Translation failed"
+                translations = [part.get("text", "Translation failed") for part in response_data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])]
+                return [t.strip() if t != "Translation failed" else "Translation failed" for t in translations]
             
             elif response.status_code == 429:
-                print("[WARNING] Rate limit exceeded. Waiting for 60 seconds before retrying...")
-                time.sleep(60)  # Wait for 1 minute before retrying
+                print(f"[WARNING] Rate limit exceeded. Waiting {wait_time} seconds before retrying...")
+                time.sleep(wait_time)
+                wait_time = min(wait_time * 2, 120)  # Exponential backoff (max wait time: 120s)
             
             else:
                 print(f"Gemini API error: {response.status_code}, {response.text}")
-                return "Translation failed"
+                return ["Translation failed"] * len(texts)
         
         except Exception as e:
             print(f"[ERROR] Gemini API request failed: {e}")
-            return "Translation failed"
+            return ["Translation failed"] * len(texts)
+    
+    return ["Translation failed"] * len(texts)
 
 # Function to fetch news from Apify Actor API
 def fetch_news_from_apify(api_token):
@@ -91,28 +95,25 @@ def main():
     print("Fetching news from Apify Actor API...")
     fetched_news = fetch_news_from_apify(APIFY_API_TOKEN)
 
-    print("Translating news content using Gemini API...")
+    print("Translating news content using Gemini API in batches...")
     translated_news = []
+    batch_size = 5  # Process 5 articles per batch
     
-    for news in fetched_news:
-        original_title = news.get("title", "Untitled")
-        original_description = news.get("description", "No description available.")
-        original_content = news.get("content", "No content available.")
-        
-        # Translate with retry logic for rate limits
-        translated_title = translate_text_gemini(original_title)
-        translated_description = translate_text_gemini(original_description)
-        translated_content = translate_text_gemini(original_content)
-        
-        # Only add the news item if at least one translation is successful
-        if translated_title != "Translation failed" or translated_description != "Translation failed" or translated_content != "Translation failed":
-            news["title"] = translated_title if translated_title != "Translation failed" else original_title
-            news["description"] = translated_description if translated_description != "Translation failed" else original_description
-            news["content"] = translated_content if translated_content != "Translation failed" else original_content
-            news["url"] = news.get("url", "#")  # Ensure 'url' key exists
+    for i in range(0, len(fetched_news), batch_size):
+        batch = fetched_news[i:i + batch_size]
+        titles = [news.get("title", "Untitled") for news in batch]
+        descriptions = [news.get("description", "No description available.") for news in batch]
+        contents = [news.get("content", "No content available.") for news in batch]
+
+        translated_titles = translate_text_gemini(titles)
+        translated_descriptions = translate_text_gemini(descriptions)
+        translated_contents = translate_text_gemini(contents)
+
+        for j, news in enumerate(batch):
+            news["title"] = translated_titles[j] if translated_titles[j] != "Translation failed" else titles[j]
+            news["description"] = translated_descriptions[j] if translated_descriptions[j] != "Translation failed" else descriptions[j]
+            news["content"] = translated_contents[j] if translated_contents[j] != "Translation failed" else contents[j]
             translated_news.append(news)
-        else:
-            print(f"Skipping news (translation failed for all fields): {original_title}")
 
     existing_data = load_existing_data()
     combined_news = remove_duplicates(translated_news + existing_data.get("all_news", []))
