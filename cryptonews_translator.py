@@ -94,9 +94,9 @@ def main():
     translated_news = []
     
     for news in fetched_news:
-        original_title = news["title"]
-        original_description = news["description"]
-        original_content = news["content"]
+        original_title = news.get("title", "Untitled")
+        original_description = news.get("description", "No description available.")
+        original_content = news.get("content", "No content available.")
         
         # Translate with retry logic for rate limits
         translated_title = translate_text_gemini(original_title)
@@ -119,7 +119,7 @@ def main():
     print("\nNewly Added News:")
     new_news = [news for news in combined_news if news not in existing_data.get("all_news", [])]
     for news in new_news:
-        print(f"Title: {news['title']}\nURL: {news['url']}\nContent Snippet: {news.get('content', '')[:100]}...\n")
+        print(f"Title: {news['title']}\nURL: {news.get('url', '#')}\nContent Snippet: {news.get('content', '')[:100]}...\n")
 
 if __name__ == "__main__":
     main()
