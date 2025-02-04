@@ -28,7 +28,12 @@ def translate_text_gemini(texts, max_retries=5):
             if response.status_code == 200:
                 response_data = response.json()
                 translations = [part.get("text", "Translation failed") for part in response_data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])]
-                return [t.strip() if t != "Translation failed" else "Translation failed" for t in translations]
+                
+                # Ensure we return the same number of translations as inputs
+                if len(translations) != len(texts):
+                    print(f"[WARNING] Expected {len(texts)} translations, but got {len(translations)}. Filling missing values.")
+                    translations += ["Translation failed"] * (len(texts) - len(translations))
+                return translations
             
             elif response.status_code == 429:
                 print(f"[WARNING] Rate limit exceeded. Waiting {wait_time} seconds before retrying...")
@@ -97,6 +102,7 @@ def main():
 
     print("Translating news content using Gemini API in batches...")
     translated_news = []
+    failed_news_count = 0
     batch_size = 5  # Process 5 articles per batch
     
     for i in range(0, len(fetched_news), batch_size):
@@ -110,19 +116,21 @@ def main():
         translated_contents = translate_text_gemini(contents)
 
         for j, news in enumerate(batch):
-            news["title"] = translated_titles[j] if translated_titles[j] != "Translation failed" else titles[j]
-            news["description"] = translated_descriptions[j] if translated_descriptions[j] != "Translation failed" else descriptions[j]
-            news["content"] = translated_contents[j] if translated_contents[j] != "Translation failed" else contents[j]
+            if "Translation failed" in (translated_titles[j], translated_descriptions[j], translated_contents[j]):
+                failed_news_count += 1
+                continue
+            
+            news["title"] = translated_titles[j]
+            news["description"] = translated_descriptions[j]
+            news["content"] = translated_contents[j]
             translated_news.append(news)
 
     existing_data = load_existing_data()
     combined_news = remove_duplicates(translated_news + existing_data.get("all_news", []))
     save_to_json(combined_news)
-
-    print("\nNewly Added News:")
-    new_news = [news for news in combined_news if news not in existing_data.get("all_news", [])]
-    for news in new_news:
-        print(f"Title: {news['title']}\nURL: {news.get('url', '#')}\nContent Snippet: {news.get('content', '')[:100]}...\n")
+    
+    print(f"\nSuccessfully translated {len(translated_news)} news articles.")
+    print(f"Failed to translate {failed_news_count} news articles.")
 
 if __name__ == "__main__":
     main()
