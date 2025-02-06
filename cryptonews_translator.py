@@ -101,10 +101,11 @@ def main():
     failed_news_count = 0
     
     with ThreadPoolExecutor(max_workers=5) as executor:
-        titles = executor.map(translate_text_gemini, [news.get("title", "Untitled") for news in fetched_news])
-        descriptions = executor.map(translate_text_gemini, [news.get("description", "No description available.") for news in fetched_news])
-        contents = executor.map(translate_text_gemini, [news.get("content", "No content available.") for news in fetched_news])
+        titles = list(executor.map(translate_text_gemini, [news.get("title", "Untitled") for news in fetched_news]))
+        descriptions = list(executor.map(translate_text_gemini, [news.get("description", "No description available.") for news in fetched_news]))
+        contents = list(executor.map(translate_text_gemini, [news.get("content", "No content available.") for news in fetched_news]))
     
+    print("\nSuccessfully Translated Articles:")
     for news, translated_title, translated_description, translated_content in zip(fetched_news, titles, descriptions, contents):
         if "Translation failed" in (translated_title, translated_description, translated_content):
             failed_news_count += 1
@@ -114,6 +115,7 @@ def main():
         news["description"] = translated_description
         news["content"] = translated_content
         translated_news.append(news)
+        print(f"- {news['title']}")
 
     existing_data = load_existing_data()
     combined_news = remove_duplicates(translated_news + existing_data.get("all_news", []))
