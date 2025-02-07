@@ -69,8 +69,8 @@ def remove_duplicates(news_list):
     seen_urls = set()
     unique_news = []
     for news in news_list:
-        url = news.get("url", "#")  # Default to '#' if URL is missing
-        if url not in seen_urls:
+        url = news.get("url", None)
+        if url and url not in seen_urls:
             unique_news.append(news)
             seen_urls.add(url)
     return unique_news
@@ -119,8 +119,9 @@ def main():
 
     existing_data = load_existing_data()
     all_news = existing_data.get("all_news", [])
-    combined_news = remove_duplicates(translated_news + all_news)
+    combined_news = remove_duplicates(all_news + translated_news)  # Ensure new data is appended properly
     
+    print(f"[DEBUG] Total articles before saving: {len(combined_news)}")
     save_to_json(combined_news)
     
     print("\n========== Translation Summary ==========")
