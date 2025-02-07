@@ -58,7 +58,10 @@ def fetch_news_from_apify(api_token):
 def load_existing_data(filename="translated_news.json"):
     if os.path.exists(filename):
         with open(filename, "r", encoding="utf-8") as f:
-            return json.load(f)
+            try:
+                return json.load(f)
+            except json.JSONDecodeError:
+                return {"all_news": []}  # Return empty structure if JSON is corrupted
     return {"all_news": []}
 
 # Function to remove duplicates
@@ -115,10 +118,8 @@ def main():
             print(f"✖ Skipping news (translation failed or rate limit exceeded): {original_title}")
 
     existing_data = load_existing_data()
-    if isinstance(existing_data, dict) and "all_news" in existing_data:
-        combined_news = remove_duplicates(translated_news + existing_data["all_news"])
-    else:
-        combined_news = remove_duplicates(translated_news)
+    all_news = existing_data.get("all_news", [])
+    combined_news = remove_duplicates(translated_news + all_news)
     
     save_to_json(combined_news)
     
