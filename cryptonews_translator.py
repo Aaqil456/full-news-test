@@ -115,7 +115,11 @@ def main():
             print(f"✖ Skipping news (translation failed or rate limit exceeded): {original_title}")
 
     existing_data = load_existing_data()
-    combined_news = remove_duplicates(translated_news + existing_data.get("all_news", []))
+    if isinstance(existing_data, dict) and "all_news" in existing_data:
+        combined_news = remove_duplicates(translated_news + existing_data["all_news"])
+    else:
+        combined_news = remove_duplicates(translated_news)
+    
     save_to_json(combined_news)
     
     print("\n========== Translation Summary ==========")
