@@ -106,7 +106,11 @@ def main():
         contents = list(executor.map(translate_text_gemini, [news.get("content", "No content available.") for news in fetched_news]))
     
     print("\nSuccessfully Translated Articles:")
-    for news, translated_title, translated_description, translated_content in zip(fetched_news, titles, descriptions, contents):
+    for i, news in enumerate(fetched_news):
+        translated_title = titles[i]
+        translated_description = descriptions[i]
+        translated_content = contents[i]
+        
         if "Translation failed" in (translated_title, translated_description, translated_content):
             failed_news_count += 1
             continue
