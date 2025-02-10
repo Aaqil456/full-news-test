@@ -93,19 +93,30 @@ def remove_duplicates(news_list):
 
 # Function to save news to JSON
 def save_to_json(data, filename="translated_news.json"):
-    if not data:  # Ensure JSON is not empty before saving
+    if not data:
         print("\n[WARNING] No new articles to save. Skipping JSON update.")
         return  
-    
+
     output = {
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "all_news": data
     }
 
+    # 🔥 Debug: Print JSON content before saving
+    print("\n[DEBUG] JSON data before saving:")
+    print(json.dumps(output, indent=4, ensure_ascii=False))
+
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=4)
 
     print(f"\n[INFO] Successfully saved {len(data)} articles to {filename}")
+
+    # 🔥 Debug: Check if file is saved
+    with open(filename, "r", encoding="utf-8") as f:
+        saved_data = json.load(f)
+        print("\n[DEBUG] JSON data after saving:")
+        print(json.dumps(saved_data, indent=4, ensure_ascii=False))
+
 
 # Main function
 def main():
@@ -121,7 +132,7 @@ def main():
     translated_news = []
     success_count = 0
     failed_count = 0
-    
+
     for news in fetched_news:
         original_title = news.get("title", "Untitled")
         original_description = news.get("description", "No description available.")
@@ -142,10 +153,21 @@ def main():
             failed_count += 1
             print(f"✖ Skipping news (translation failed or rate limit exceeded): {original_title}")
 
+    # 🔥 Load existing data to ensure it's appended
     existing_data = load_existing_data()
     all_news = existing_data.get("all_news", [])
+
+    # 🔥 Debug: Print current articles
+    print("\n[DEBUG] Articles in existing JSON before adding new:")
+    print(json.dumps(all_news, indent=4, ensure_ascii=False))
+
+    # Append and remove duplicates
     combined_news = remove_duplicates(all_news + translated_news)
-    
+
+    # 🔥 Debug: Check articles after processing
+    print("\n[DEBUG] Articles before saving:")
+    print(json.dumps(combined_news, indent=4, ensure_ascii=False))
+
     if translated_news:  # Ensure at least one article was translated
         print(f"[DEBUG] Total articles before saving: {len(combined_news)}")
         save_to_json(combined_news)
@@ -156,6 +178,7 @@ def main():
     print(f"✔ Successfully Translated: {success_count} articles")
     print(f"✖ Failed to Translate: {failed_count} articles")
     print("========================================")
+
 
 if __name__ == "__main__":
     main()
