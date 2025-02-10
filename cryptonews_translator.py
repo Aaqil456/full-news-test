@@ -95,13 +95,17 @@ def remove_duplicates(news_list):
 def save_to_json(data, filename="translated_news.json"):
     if not data:  # Ensure JSON is not empty before saving
         print("\n[WARNING] No new articles to save. Skipping JSON update.")
-        return
+        return  
     
-    output = {"timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "all_news": data}
+    output = {
+        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "all_news": data
+    }
+
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=4)
-    
-    print(f"\n[INFO] Translated news saved to {filename}")
+
+    print(f"\n[INFO] Successfully saved {len(data)} articles to {filename}")
 
 # Main function
 def main():
@@ -142,7 +146,7 @@ def main():
     all_news = existing_data.get("all_news", [])
     combined_news = remove_duplicates(all_news + translated_news)
     
-    if translated_news:  # If new articles were successfully translated, save them
+    if translated_news:  # Ensure at least one article was translated
         print(f"[DEBUG] Total articles before saving: {len(combined_news)}")
         save_to_json(combined_news)
     else:
