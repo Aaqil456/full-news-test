@@ -132,9 +132,14 @@ def main():
     save_to_json(combined_news)
 
     print("\nNewly Added News:")
-    new_news = [news for news in combined_news if news not in existing_data.get("all_news", [])]
-    for news in new_news:
-        print(f"Title: {news['title']}\nURL: {news.get('url', 'No URL')}\nContent Snippet: {news.get('content', 'No content available.')[:100]}...\n")  # Fixes NoneType error
+    for news in combined_news:
+        try:
+            title = news.get("title", "Untitled")
+            url = news.get("url", "No URL")
+            content = str(news.get("content", "No content available."))  # Ensures it's always a string
+            print(f"Title: {title}\nURL: {url}\nContent Snippet: {content[:100]}...\n")
+        except Exception as e:
+            print(f"[ERROR] Failed to print news item: {e}")  # Catches errors but continues execution
 
 if __name__ == "__main__":
     main()
