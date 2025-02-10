@@ -1,3 +1,4 @@
+# Import required libraries
 import os
 import requests
 import json
@@ -26,13 +27,11 @@ def translate_text_gemini(text):
         response = requests.post(GEMINI_API_URL, headers=headers, json=payload)
         if response.status_code == 200:
             response_data = response.json()
+            # Extracting the translated text
             translated_text = response_data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "Translation failed")
             return translated_text.strip() if translated_text != "Translation failed" else "Translation failed"
-        elif response.status_code == 429:
-            print("[WARNING] Rate limit exceeded. Waiting before retrying...")
-            return "Rate Limit Exceeded"
         else:
-            print(f"[ERROR] Gemini API error: {response.status_code}, {response.text}")
+            print(f"Gemini API error: {response.status_code}, {response.text}")
             return "Translation failed"
     except Exception as e:
         print(f"[ERROR] Gemini API request failed: {e}")
@@ -46,9 +45,19 @@ def fetch_news_from_apify(api_token):
         response = requests.post(url, timeout=600)
         if response.status_code == 201:
             news_data = response.json()
-            return news_data
+            news_list = []
+            for news in news_data:
+                news_list.append({
+                    "title": news.get("title", "Untitled"),
+                    "url": news.get("link", "#"),
+                    "description": news.get("summary", "No summary available."),
+                    "image": news.get("image", ""),
+                    "content": news.get("content", "No content available."),
+                    "timestamp": news.get("time", datetime.now().isoformat())
+                })
+            return news_list
         else:
-            print(f"[ERROR] Failed to fetch news from Apify: {response.status_code}, {response.text}")
+            print(f"Failed to fetch news from Apify: {response.status_code}, {response.text}")
             return []
     except requests.exceptions.RequestException as e:
         print(f"[ERROR] Exception occurred while fetching data from Apify: {e}")
@@ -58,10 +67,7 @@ def fetch_news_from_apify(api_token):
 def load_existing_data(filename="translated_news.json"):
     if os.path.exists(filename):
         with open(filename, "r", encoding="utf-8") as f:
-            try:
-                return json.load(f)
-            except json.JSONDecodeError:
-                return {"all_news": []}  # Return empty structure if JSON is corrupted
+            return json.load(f)
     return {"all_news": []}
 
 # Function to remove duplicates
@@ -69,10 +75,9 @@ def remove_duplicates(news_list):
     seen_urls = set()
     unique_news = []
     for news in news_list:
-        url = news.get("url", None)
-        if url and url not in seen_urls:
+        if news["url"] not in seen_urls:
             unique_news.append(news)
-            seen_urls.add(url)
+            seen_urls.add(news["url"])
     return unique_news
 
 # Function to save news to JSON
@@ -80,54 +85,48 @@ def save_to_json(data, filename="translated_news.json"):
     output = {"timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "all_news": data}
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=4)
-    print(f"\n[INFO] Translated news saved to {filename}")
+    print(f"Translated news saved to {filename}")
 
 # Main function
 def main():
     APIFY_API_TOKEN = os.getenv("APIFY_API_TOKEN")
     if not APIFY_API_TOKEN:
-        print("[ERROR] API token is missing! Please set APIFY_API_TOKEN as an environment variable.")
+        print("API token is missing! Please set APIFY_API_TOKEN as an environment variable.")
         return
 
-    print("\n[INFO] Fetching news from Apify Actor API...")
+    print("Fetching news from Apify Actor API...")
     fetched_news = fetch_news_from_apify(APIFY_API_TOKEN)
 
-    print("\n[INFO] Translating news content using Gemini API...")
+    print("Translating news content using Gemini API...")
     translated_news = []
-    success_count = 0
-    failed_count = 0
     
     for news in fetched_news:
-        original_title = news.get("title", "Untitled")
-        original_description = news.get("description", "No description available.")
-        original_content = news.get("content", "No content available.")
+        original_title = news["title"]
+        original_description = news["description"]
+        original_content = news["content"]
 
         translated_title = translate_text_gemini(original_title)
         translated_description = translate_text_gemini(original_description)
         translated_content = translate_text_gemini(original_content)
 
-        if "Translation failed" not in (translated_title, translated_description, translated_content) and "Rate Limit Exceeded" not in (translated_title, translated_description, translated_content):
-            news["title"] = translated_title
-            news["description"] = translated_description
-            news["content"] = translated_content
+        # Only add the news item if at least one translation is successful
+        if translated_title != "Translation failed" or translated_description != "Translation failed" or translated_content != "Translation failed":
+            news["title"] = translated_title if translated_title != "Translation failed" else original_title
+            news["description"] = translated_description if translated_description != "Translation failed" else original_description
+            news["content"] = translated_content if translated_content != "Translation failed" else original_content
             translated_news.append(news)
-            success_count += 1
-            print(f"✔ Successfully Translated: {translated_title}")
         else:
-            failed_count += 1
-            print(f"✖ Skipping news (translation failed or rate limit exceeded): {original_title}")
+            print(f"Skipping news (translation failed for all fields): {original_title}")
 
     existing_data = load_existing_data()
-    all_news = existing_data.get("all_news", [])
-    combined_news = remove_duplicates(all_news + translated_news)  # Ensure new data is appended properly
-    
-    print(f"[DEBUG] Total articles before saving: {len(combined_news)}")
+    combined_news = remove_duplicates(translated_news + existing_data.get("all_news", []))
+
     save_to_json(combined_news)
-    
-    print("\n========== Translation Summary ==========")
-    print(f"✔ Successfully Translated: {success_count} articles")
-    print(f"✖ Failed to Translate: {failed_count} articles")
-    print("========================================")
+
+    print("\nNewly Added News:")
+    new_news = [news for news in combined_news if news not in existing_data.get("all_news", [])]
+    for news in new_news:
+        print(f"Title: {news['title']}\nURL: {news['url']}\nContent Snippet: {news.get('content', '')[:100]}...\n")
 
 if __name__ == "__main__":
     main()
