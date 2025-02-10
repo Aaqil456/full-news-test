@@ -3,7 +3,7 @@ name: Run Translation Script and Deploy to Pages
 on:
   workflow_dispatch:  # Allows manual execution from the Actions tab
   schedule:
-    - cron: "0 * * * *"   # Runs the workflow at the start of every 15 minutes
+    - cron: "0 * * * *"   # Runs the workflow at the start of every hour
 
 permissions:
   contents: write
@@ -45,7 +45,9 @@ jobs:
         env:
           APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python cryptonews_translator.py
+        run: |
+          python cryptonews_translator.py
+          cat translated_news.json  # Debugging step to verify JSON content
 
       - name: Commit and push changes
         env:
