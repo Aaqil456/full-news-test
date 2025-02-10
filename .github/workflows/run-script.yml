@@ -47,7 +47,8 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           python cryptonews_translator.py
-          cat translated_news.json  # Debugging step to verify JSON content
+          echo "[DEBUG] Checking contents of translated_news.json"
+          cat translated_news.json || echo "[WARNING] translated_news.json not found or empty"
 
       - name: Commit and push changes
         env:
@@ -56,6 +57,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add translated_news.json
+          git status
           git diff --cached --quiet || git commit -m "Update translated news"
           git push https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/${{ github.repository }}.git main
 
