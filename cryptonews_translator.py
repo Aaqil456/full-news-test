@@ -19,8 +19,8 @@ NEWS_CATEGORY_ID = 1413
 
 # Translate text using Gemini API
 def translate_text_gemini(text):
-    if not text.strip():
-        return text
+    if not text or not isinstance(text, str) or not text.strip():
+        return "Translation failed"
 
     gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}"
     headers = {"Content-Type": "application/json"}
@@ -91,15 +91,18 @@ def upload_image_to_wordpress(image_url):
         return None
 
 
-# Post to WordPress with featured image and category
-def post_to_wordpress(title, content, media_id=None, status="publish"):
+# Post to WordPress with featured image, category, and formatted content
+def post_to_wordpress(title, content, original_url, image_url, media_id=None, status="publish"):
     post_endpoint = f"{WP_URL}/posts"
     credentials = f"{WP_USER}:{WP_APP_PASSWORD}"
     token = base64.b64encode(credentials.encode()).decode()
 
+    # Embed image at the top and link at the bottom
+    full_content = f'<img src="{image_url}" alt="{title}"/>\n\n{content}\n\n<p>📌 <a href="{original_url}" target="_blank">Baca artikel asal di sini.</a></p>'
+
     post_data = {
         "title": title,
-        "content": content,
+        "content": full_content,
         "status": status,
         "categories": [NEWS_CATEGORY_ID]
     }
@@ -143,31 +146,36 @@ def main():
     for idx, news in enumerate(fetched_news[:20]):
         print(f"\nProcessing news {idx + 1} of {min(20, len(fetched_news))}")
 
-        title = translate_text_gemini(news.get("title", ""))
-        description = translate_text_gemini(news.get("summary", ""))
-        content = translate_text_gemini(news.get("content", ""))
+        original_url = news.get("link") or ""
+        image_url = news.get("image") or ""
 
-        # ✅ Skip if title or content failed translation
+        if not original_url:
+            print(f"[SKIP] No original URL found. Skipping this news.")
+            continue
+
+        title = translate_text_gemini(news.get("title") or "")
+        description = translate_text_gemini(news.get("summary") or "")
+        content = translate_text_gemini(news.get("content") or "")
+
         if title == "Translation failed" or content == "Translation failed":
             print(f"[SKIP] Translation failed for '{news.get('title', 'Untitled')}'. Skipping this news.")
             continue
 
-        image_url = news.get("image", "")
         media_id = upload_image_to_wordpress(image_url) if image_url else None
 
-        post_success = post_to_wordpress(title, content, media_id)
+        post_success = post_to_wordpress(title, content, original_url, image_url, media_id)
 
         translated_news.append({
             "title": title,
             "description": description,
             "content": content,
             "image": image_url,
-            "url": news.get("link", ""),
+            "url": original_url,
             "timestamp": news.get("time", datetime.now().isoformat()),
             "status": "Posted" if post_success else "Failed"
         })
 
-        time.sleep(3)  # Delay to avoid overwhelming the server
+        time.sleep(1)
 
     save_to_json(translated_news)
 
