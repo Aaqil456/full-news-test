@@ -1,9 +1,9 @@
-name: Run Translation Script and Deploy to Pages
+name: Run Translation Script and Post to WordPress
 
 on:
-  workflow_dispatch:  # Allows manual execution from the Actions tab
-  #schedule:
-    #- cron: "0 * * * *"   # Runs the workflow at the start of every hour
+  workflow_dispatch:  # Manual run from Actions tab
+  # schedule:
+  #   - cron: "0 * * * *"  # Uncomment to run every hour
 
 permissions:
   contents: write
@@ -31,26 +31,27 @@ jobs:
         env:
           APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          WP_USER: ${{ secrets.WP_USER }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
         run: |
-          if [ -z "${APIFY_API_TOKEN}" ]; then
-            echo "APIFY_API_TOKEN is not set!"
-            exit 1
-          fi
-          if [ -z "${GEMINI_API_KEY}" ]; then
-            echo "GEMINI_API_KEY is not set!"
+          if [ -z "${APIFY_API_TOKEN}" ] || [ -z "${GEMINI_API_KEY}" ] || [ -z "${WP_USER}" ] || [ -z "${WP_APP_PASSWORD}" ]; then
+            echo "❌ One or more secrets are missing!"
             exit 1
           fi
 
-      - name: Run translation script
+      - name: Run translation and posting script
         env:
           APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          WP_USER: ${{ secrets.WP_USER }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          WP_URL: ${{ secrets.WP_URL }}
         run: |
           python cryptonews_translator.py
-          echo "[DEBUG] Checking contents of translated_news.json"
+          echo "[DEBUG] Contents of translated_news.json:"
           cat translated_news.json || echo "[WARNING] translated_news.json not found or empty"
 
-      - name: Commit and push changes
+      - name: Commit and push translated news JSON
         env:
           ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
         run: |
@@ -60,10 +61,3 @@ jobs:
           git status
           git diff --cached --quiet || git commit -m "Update translated news"
           git push https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/${{ github.repository }}.git main
-
-      - name: Trigger GitHub Pages Rebuild
-        env:
-          ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
-        run: |
-          curl -X POST -H "Authorization: token ${{ secrets.ACTIONS_PAT }}" \
-          https://api.github.com/repos/${{ github.repository }}/pages/builds
