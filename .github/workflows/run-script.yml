@@ -2,8 +2,8 @@ name: Run Translation Script and Post to WordPress
 
 on:
   workflow_dispatch:  # Manual run from Actions tab
-  # schedule:
-  #   - cron: "0 * * * *"  # Uncomment to run every hour
+  schedule:
+    - cron: "0 * * * *"  # Uncomment to run every hour
 
 permissions:
   contents: write
