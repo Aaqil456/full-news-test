@@ -1,9 +1,9 @@
-name: Run Translation Script and Post to WordPress
+name: Run Translation Script and Post to WordPress & Facebook
 
 on:
-  workflow_dispatch:  # Manual run from Actions tab
-  #schedule:
-    #- cron: "0 * * * *"  # Uncomment to run every hour
+  workflow_dispatch:  # Manual run from GitHub Actions tab
+  # schedule:
+  #   - cron: "0 * * * *"  # Uncomment to run hourly if needed
 
 permissions:
   contents: write
@@ -13,45 +13,60 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - name: Checkout repository
+      - name: ⬇️ Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set up Python
+      - name: 🐍 Set Up Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
 
-      - name: Install dependencies
+      - name: 📦 Install Dependencies
         run: |
-          pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
-          pip install google-generativeai requests beautifulsoup4
-          pip install --upgrade google-generativeai
+          pip install --upgrade pip
+          pip install google-generativeai requests beautifulsoup4 langdetect
 
-      - name: Verify Secrets
+      - name: 🔒 Verify Secrets
         env:
           APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           WP_USER: ${{ secrets.WP_USER }}
           WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
         run: |
-          if [ -z "${APIFY_API_TOKEN}" ] || [ -z "${GEMINI_API_KEY}" ] || [ -z "${WP_USER}" ] || [ -z "${WP_APP_PASSWORD}" ]; then
-            echo "❌ One or more secrets are missing!"
+          echo "🔎 Checking required secrets..."
+          missing=false
+
+          for var in APIFY_API_TOKEN GEMINI_API_KEY WP_USER WP_APP_PASSWORD FB_PAGE_ACCESS_TOKEN FB_PAGE_ID; do
+            if [ -z "${!var}" ]; then
+              echo "❌ $var is missing!"
+              missing=true
+            else
+              echo "✅ $var is set."
+            fi
+          done
+
+          if [ "$missing" = true ]; then
+            echo "❌ One or more required secrets are missing. Aborting."
             exit 1
           fi
 
-      - name: Run translation and posting script
+      - name: 🚀 Run Translation and Posting Script
         env:
-          APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
+          WP_URL: ${{ secrets.WP_URL }}
           WP_USER: ${{ secrets.WP_USER }}
           WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
-          WP_URL: ${{ secrets.WP_URL }}
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
         run: |
           python cryptonews_translator.py
-          echo "[DEBUG] Contents of translated_news.json:"
-          cat translated_news.json || echo "[WARNING] translated_news.json not found or empty"
+          echo "[DEBUG] JSON Output Preview:"
+          cat translated_news.json || echo "[No translated_news.json found]"
 
-      - name: Commit and push translated news JSON
+      - name: 📤 Commit and Push Translated JSON
         env:
           ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
         run: |
@@ -60,4 +75,5 @@ jobs:
           git add translated_news.json
           git status
           git diff --cached --quiet || git commit -m "Update translated news"
-          git push https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/${{ github.repository }}.git main
+          git pull --rebase https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/${{ github.repository }}.git main || echo "✅ No remote changes"
+          git push https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/${{ github.repository }}.git main || echo "✅ Nothing to push"
